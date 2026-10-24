@@ -14,7 +14,11 @@ import { HowWeWork, Steps } from "./scenes/home/HowWeWork";
 import { HomeImpact } from "./scenes/home/Impact";
 import { Intro } from "./scenes/home/Intro";
 import { Name } from "./scenes/home/Name";
-import { PresidentOne, PresidentTwo } from "./scenes/home/Presidents";
+import {
+  PresidentOne,
+  PresidentTwo,
+  Presidents,
+} from "./scenes/home/Presidents";
 import {
   HOW_SECONDS,
   InaayatHow,
@@ -87,6 +91,7 @@ import {
 import {
   InTheNews,
   ProjectsIntro,
+  WinsGrid,
   WinsOne,
   WinsOpener,
   WinsTwo,
@@ -587,4 +592,55 @@ export const SCENES: SceneDef[] = [
     seconds: 9,
     enter: "fade",
   },
+];
+
+const pick = (id: string, seconds: number, enter?: Enter): SceneDef => {
+  const s = SCENES.find((x) => x.id === id);
+  if (!s) throw new Error(`No scene called ${id}`);
+  return { ...s, seconds, enter };
+};
+
+// The three-minute highlights: the strongest scenes of each chapter, a little faster.
+export const SHORT_SCENES: SceneDef[] = [
+  pick("Intro", 6),
+  pick("Home-Hero", 8.5, "fade"),
+  pick("Home-Impact", 7, "wipe"),
+  pick("Home-Name", 6.5, "slide"),
+  pick("Home-About", 7.5, "fade"),
+  pick("Home-HowWeWork", 6, "wipe"),
+  pick("Home-Guides", 6, "push"),
+  {
+    id: "Home-Presidents",
+    chapter: HRC,
+    component: Presidents,
+    seconds: 6.5,
+    enter: "slide",
+  },
+  pick("Story-Chirag", 8, "iris"),
+  {
+    id: "Wins-Grid",
+    chapter: WINS,
+    component: WinsGrid,
+    seconds: 8,
+    enter: "wipe",
+  },
+  pick("Projects", 7, "fade"),
+  pick("Inaayat-Hero", 8, "iris"),
+  pick("Inaayat-Impact", 7, "wipe"),
+  pick("Inaayat-Girls", 7, "fade"),
+  pick("Inaayat-TalkPeriod", 4.5, "push"),
+  pick("Inaayat-Kit", 8, "wipe"),
+  pick("Inaayat-Wings", 6, "iris"),
+  pick("Inaayat-Wings-2024", 8, "slide"),
+  pick("Sanchay-Hero", 8, "iris"),
+  pick("Sanchay-Impact", 7, "wipe"),
+  pick("Sanchay-Washes", 4.5, "slide"),
+  pick("Sanchay-Gather", 6.5, "wipe"),
+  pick("Sanchay-Approach", 9, "slideUp"),
+  pick("Sanchay-Batch", 7, "slide"),
+  pick("Sanchay-SecondLife", 5.5, "fade"),
+  pick("Sanchay-Goal", 6.5, "slideUp"),
+  pick("Closing-Life", 6.5, "iris"),
+  pick("Closing-Join", 6.5, "wipe"),
+  pick("Outro", 8, "fade"),
 ];

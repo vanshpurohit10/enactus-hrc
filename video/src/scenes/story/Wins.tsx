@@ -183,6 +183,64 @@ export const WinsTwo: React.FC = () => (
   <WinsPage wins={WINS.slice(5)} first={5} />
 );
 
+/** All ten wins on one grid, for the short cut. */
+export const WinsGrid: React.FC = () => (
+  <Scene pal={HOME} tone="sand">
+    <div style={{ position: "absolute", left: SIDE, top: TOP }}>
+      <Eyebrow>Wins</Eyebrow>
+      <Words delay={4} style={display(84, 860, { marginTop: 26 })}>
+        Recognised, from Mumbai to the *world.*
+      </Words>
+    </div>
+    <div
+      style={{
+        position: "absolute",
+        left: SIDE,
+        right: SIDE,
+        bottom: 100,
+        display: "grid",
+        gridTemplateColumns: "repeat(5, 1fr)",
+        gap: 22,
+      }}
+    >
+      {WINS.map((w, i) => (
+        <Reveal key={w.big} delay={14 + i * 4} y={50} scale={0.9}>
+          <div
+            style={{
+              height: 270,
+              borderRadius: 26,
+              background: i === 0 ? HOME.acc : "#fff",
+              boxShadow: "0 18px 50px -24px rgba(0,0,0,.25)",
+              padding: "28px 26px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <div style={display(44, 880, { lineHeight: 1.04 })}>{w.big}</div>
+            <div
+              style={{
+                fontFamily: MONO,
+                fontWeight: 700,
+                fontSize: 19,
+                lineHeight: 1.45,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: i === 0 ? HOME.accInk : HOME.accDeep,
+              }}
+            >
+              {w.where}
+              {w.tag ? (
+                <div style={{ color: HOME.mute, marginTop: 6 }}>{w.tag}</div>
+              ) : null}
+            </div>
+          </div>
+        </Reveal>
+      ))}
+    </div>
+  </Scene>
+);
+
 export const InTheNews: React.FC = () => {
   const frame = useCurrentFrame();
   return (

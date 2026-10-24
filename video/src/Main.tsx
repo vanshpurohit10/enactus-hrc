@@ -17,7 +17,7 @@ import {
   interpolate,
   staticFile,
 } from "remotion";
-import { Enter, SCENES } from "./scenes";
+import { Enter, SCENES, SHORT_SCENES, SceneDef } from "./scenes";
 
 export const FPS = 30;
 export const WIDTH = 1920;
@@ -53,81 +53,99 @@ const presentation = (enter: Enter): TransitionPresentation<any> => {
 const frames = (seconds: number) => Math.round(seconds * FPS);
 
 // Where each scene starts once transitions overlap its neighbours.
-export const TIMELINE = SCENES.reduce<{ start: number; overlap: number }[]>(
-  (acc, s, i) => {
-    const overlap = i > 0 ? TRANSITION[s.enter ?? "fade"] : 0;
-    const prev = acc[i - 1];
-    const start = prev
-      ? prev.start + frames(SCENES[i - 1].seconds) - overlap
-      : 0;
-    acc.push({ start, overlap });
-    return acc;
-  },
-  [],
-);
+const timeline = (scenes: SceneDef[]) =>
+  scenes.reduce<number[]>((starts, s, i) => {
+    const prev = scenes[i - 1];
+    starts.push(
+      prev
+        ? starts[i - 1] + frames(prev.seconds) - TRANSITION[s.enter ?? "fade"]
+        : 0,
+    );
+    return starts;
+  }, []);
 
-export const TOTAL_FRAMES =
-  TIMELINE[TIMELINE.length - 1].start +
-  frames(SCENES[SCENES.length - 1].seconds);
+const totalFrames = (scenes: SceneDef[]) =>
+  timeline(scenes)[scenes.length - 1] +
+  frames(scenes[scenes.length - 1].seconds);
 
 const MUSIC_FADE = 3 * FPS;
 
-export const Main: React.FC = () => (
-  <AbsoluteFill style={{ backgroundColor: "#0b0b0e" }}>
-    <TransitionSeries>
-      {SCENES.flatMap((s, i) => {
-        const items: React.ReactNode[] = [];
-        if (i > 0) {
-          const enter = s.enter ?? "fade";
+/** A cut of the film: its scenes in order, over its own music track. */
+const Film: React.FC<{ scenes: SceneDef[]; music: string }> = ({
+  scenes,
+  music,
+}) => {
+  const starts = timeline(scenes);
+  const total = totalFrames(scenes);
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#0b0b0e" }}>
+      <TransitionSeries>
+        {scenes.flatMap((s, i) => {
+          const items: React.ReactNode[] = [];
+          if (i > 0) {
+            const enter = s.enter ?? "fade";
+            items.push(
+              <TransitionSeries.Transition
+                key={`${s.id}-in`}
+                presentation={presentation(enter)}
+                timing={linearTiming({
+                  durationInFrames: TRANSITION[enter],
+                  easing: Easing.bezier(0.65, 0, 0.35, 1),
+                })}
+              />,
+            );
+          }
           items.push(
-            <TransitionSeries.Transition
-              key={`${s.id}-in`}
-              presentation={presentation(enter)}
-              timing={linearTiming({
-                durationInFrames: TRANSITION[enter],
-                easing: Easing.bezier(0.65, 0, 0.35, 1),
-              })}
-            />,
+            <TransitionSeries.Sequence
+              key={s.id}
+              name={s.id}
+              durationInFrames={frames(s.seconds)}
+            >
+              <s.component />
+            </TransitionSeries.Sequence>,
           );
+          return items;
+        })}
+      </TransitionSeries>
+      <Audio
+        src={staticFile(music)}
+        volume={(f) =>
+          0.55 *
+          interpolate(
+            f,
+            [0, MUSIC_FADE, total - MUSIC_FADE, total],
+            [0, 1, 1, 0],
+            {
+              extrapolateLeft: "clamp",
+              extrapolateRight: "clamp",
+            },
+          )
         }
-        items.push(
-          <TransitionSeries.Sequence
+      />
+      {scenes.map((s, i) =>
+        i > 0 && s.enter && s.enter !== "fade" ? (
+          <Sequence
             key={s.id}
-            name={s.id}
-            durationInFrames={frames(s.seconds)}
+            name={`whoosh ${s.id}`}
+            from={Math.max(0, starts[i] - 6)}
+            durationInFrames={45}
           >
-            <s.component />
-          </TransitionSeries.Sequence>,
-        );
-        return items;
-      })}
-    </TransitionSeries>
-    <Audio
-      src={staticFile("audio/music.mp3")}
-      volume={(f) =>
-        0.55 *
-        interpolate(
-          f,
-          [0, MUSIC_FADE, TOTAL_FRAMES - MUSIC_FADE, TOTAL_FRAMES],
-          [0, 1, 1, 0],
-          {
-            extrapolateLeft: "clamp",
-            extrapolateRight: "clamp",
-          },
-        )
-      }
-    />
-    {SCENES.map((s, i) =>
-      i > 0 && s.enter && s.enter !== "fade" ? (
-        <Sequence
-          key={s.id}
-          name={`whoosh ${s.id}`}
-          from={Math.max(0, TIMELINE[i].start - 6)}
-          durationInFrames={45}
-        >
-          <Audio src={staticFile("audio/whoosh.wav")} volume={0.5} />
-        </Sequence>
-      ) : null,
-    )}
-  </AbsoluteFill>
+            <Audio src={staticFile("audio/whoosh.wav")} volume={0.5} />
+          </Sequence>
+        ) : null,
+      )}
+    </AbsoluteFill>
+  );
+};
+
+/** Every section of the site, in full. */
+export const Main: React.FC = () => (
+  <Film scenes={SCENES} music="audio/music.mp3" />
 );
+export const TOTAL_FRAMES = totalFrames(SCENES);
+
+/** The three-minute highlights. */
+export const Short: React.FC = () => (
+  <Film scenes={SHORT_SCENES} music="audio/music-short.mp3" />
+);
+export const SHORT_FRAMES = totalFrames(SHORT_SCENES);

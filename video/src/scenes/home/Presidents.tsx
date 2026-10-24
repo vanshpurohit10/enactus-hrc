@@ -102,3 +102,100 @@ export const PresidentTwo: React.FC = () => (
     photo="president-bhavika-jhawar.jpg"
   />
 );
+
+const BOTH = [
+  {
+    n: "01",
+    name: "Vaishnavi Chaturvedi",
+    line: "The President behind the vision",
+    photo: "president-vaishnavi-chaturvedi.jpg",
+  },
+  {
+    n: "02",
+    name: "Bhavika Jhawar",
+    line: "The President behind the team",
+    photo: "president-bhavika-jhawar.jpg",
+  },
+];
+
+/** Both presidents in one frame, for the short cut. */
+export const Presidents: React.FC = () => {
+  const frame = useCurrentFrame();
+  return (
+    <Scene pal={HOME} tone="deep">
+      <div style={{ position: "absolute", left: SIDE, top: 100 }}>
+        <Eyebrow>Meet the leadership</Eyebrow>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          left: SIDE,
+          right: SIDE,
+          top: 190,
+          bottom: 90,
+          display: "flex",
+          gap: 60,
+        }}
+      >
+        {BOTH.map((p, i) => {
+          const k = prog(frame, 4 + i * 10, 36);
+          return (
+            <div
+              key={p.n}
+              style={{
+                flex: 1,
+                display: "flex",
+                gap: 40,
+                alignItems: "center",
+                opacity: k,
+                translate: `0 ${(1 - k) * 160}px`,
+              }}
+            >
+              <Photo
+                src={p.photo}
+                zoom={[1.12, 1.0]}
+                dur={200}
+                position="50% 30%"
+                style={{
+                  width: 380,
+                  height: 560,
+                  borderRadius: 30,
+                  flex: "none",
+                  boxShadow: `0 40px 100px -40px ${HOME.acc}66`,
+                }}
+              />
+              <div
+                style={{ display: "flex", flexDirection: "column", gap: 22 }}
+              >
+                <div
+                  style={{
+                    fontFamily: MONO,
+                    fontWeight: 700,
+                    fontSize: 24,
+                    letterSpacing: "0.2em",
+                    color: HOME.muteD,
+                  }}
+                >
+                  PRESIDENT · {p.n}
+                </div>
+                <Words delay={14 + i * 10} style={display(68, 880)}>
+                  {p.name}
+                </Words>
+                <Words
+                  delay={26 + i * 10}
+                  stagger={2}
+                  style={display(38, 720, {
+                    color: HOME.acc,
+                    lineHeight: 1.12,
+                  })}
+                >
+                  {p.line}
+                </Words>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </Scene>
+  );
+};
