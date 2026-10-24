@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enactus H.R. College · At Enactus, you be the change</title>
+<meta name="description" content="Enactus H.R. College is the Enactus chapter of H.R. College of Commerce & Economics, Mumbai. Since 2009, students building social businesses with communities: Project Inaayat and Project Sanchay.">
+<meta name="theme-color" content="#0b0b0e">
+<meta property="og:title" content="Enactus H.R. College · At Enactus, you be the change">
+<meta property="og:description" content="Students building social businesses with communities since 2009. Project Inaayat and Project Sanchay.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vanshpurohit10.github.io/enactus-hrc/">
+<meta property="og:image" content="https://vanshpurohit10.github.io/enactus-hrc/assets/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0e'/%3E%3Cpath d='M8 23 16 7l8 16z' fill='%23FFC21A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/enactus.css?v=5">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* the home page keeps Enactus's own black and yellow; each project brings its colour */
+:root { --acc2: #ff5a7e; }
+
+/* what Enactus means */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
+.globe-wrap { position: relative; aspect-ratio: 1; width: 100%; max-width: 560px; justify-self: center; }
+#globe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.globe-tag { position: absolute; left: 50%; bottom: 4%; transform: translateX(-50%); text-align: center; font: 700 11px/1.5 var(--mono); letter-spacing: .18em; color: var(--mute); text-transform: uppercase; white-space: nowrap; }
+.globe-tag b { display: block; font: 860 clamp(30px, 3.4vw, 46px)/1 var(--display); letter-spacing: -.02em; color: var(--text); text-transform: none; }
+.eau { display: grid; gap: 1px; background: color-mix(in srgb, var(--text) 12%, transparent); border-radius: 22px; overflow: hidden; margin-top: 32px; }
+.eau div { background: #fff; padding: 20px 22px; display: grid; grid-template-columns: 74px 1fr; gap: 16px; align-items: baseline; }
+.eau b { font: 900 34px/1 var(--display); font-stretch: 120%; letter-spacing: -.03em; }
+.eau b i { font-style: normal; color: var(--acc-deep); }
+.eau p { color: var(--mute); font-size: 16px; }
+.eau p strong { color: var(--text); }
+.tbl { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.tbl span { font: 700 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; padding: 10px 14px; border-radius: 99px; background: var(--ink); color: #fff; }
+.tbl span:nth-child(1) { background: var(--acc); color: var(--acc-ink); }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } .globe-wrap { max-width: 420px; } }
+
+/* how a chapter works */
+.flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 56px; counter-reset: f; }
+.flow article { position: relative; border-radius: 24px; padding: 26px; background: #fff; display: grid; gap: 12px; align-content: start; box-shadow: 0 1px 0 rgba(0, 0, 0, .06), 0 18px 40px -26px rgba(0, 0, 0, .3); }
+.flow article::after { counter-increment: f; content: "0" counter(f); position: absolute; right: 20px; top: 18px; font: 700 12px/1 var(--mono); letter-spacing: .14em; color: var(--mute); }
+.flow svg { width: 46px; height: 46px; }
+.flow p { color: var(--mute); font-size: 16px; }
+.guides { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.guide { border-radius: 22px; padding: 22px 24px; background: var(--ink); color: #fff; display: grid; gap: 6px; }
+.guide small { font: 700 11px/1 var(--mono); letter-spacing: .18em; color: var(--acc); text-transform: uppercase; }
+.guide b { font: 760 22px/1.2 var(--display); font-stretch: 108%; }
+.guide p { color: var(--mute-d); font-size: 15px; }
+.depts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.depts span { font: 600 13px/1 var(--body); padding: 8px 12px; border-radius: 99px; background: rgba(255, 255, 255, .1); }
+@media (max-width: 960px) { .flow { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .flow, .guides { grid-template-columns: 1fr; } }
+
+/* presidents: a pinned slide; the scroll hands the stage from the first to the second */
+.pres { position: relative; height: 260vh; background: var(--deep); color: #fff; }
+.pres-stick { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; align-items: center; overflow: hidden; }
+.pres-stick::before { content: ""; position: absolute; left: 66%; top: 52%; width: 80vmin; height: 80vmin; transform: translate(-50%, -50%); background: radial-gradient(circle, color-mix(in srgb, var(--acc) 18%, transparent), transparent 62%); pointer-events: none; }
+.pres-grid { position: relative; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; padding-top: 40px; }
+.pres-copy { display: grid; gap: 28px; }
+.pres-texts { position: relative; min-height: 320px; }
+.pres-text { position: absolute; inset: 0; display: grid; align-content: start; gap: 14px; opacity: 0; transform: translateY(24px); filter: blur(8px); transition: opacity .7s var(--ease), transform .8s var(--ease), filter .7s; }
+.pres-text.on { opacity: 1; transform: none; filter: none; }
+.pres-n { font: 700 12px/1 var(--mono); letter-spacing: .2em; color: var(--acc); text-transform: uppercase; }
+.pres-text h2 { font-size: clamp(40px, 5vw, 76px); }
+.pres-role { font: 650 clamp(18px, 1.6vw, 22px)/1.3 var(--display); font-stretch: 108%; }
+.pres-text .lede { max-width: 44ch; }
+.pres-nav { display: flex; align-items: center; gap: 10px; }
+.pres-nav button { width: 56px; height: 24px; border: 0; padding: 0; background: none; cursor: pointer; display: grid; align-items: center; }
+.pres-nav i { display: block; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, .2); overflow: hidden; position: relative; }
+.pres-nav i::after { content: ""; position: absolute; inset: 0; background: var(--acc); transform-origin: left; transform: scaleX(var(--f, 0)); }
+.pres-count { margin-left: 8px; font: 700 12px/1 var(--mono); letter-spacing: .16em; color: var(--mute-d); }
+.pres-count b { color: #fff; font-weight: 700; }
+.pres-stage { position: relative; height: min(74vh, 680px); aspect-ratio: 4 / 5; justify-self: center; }
+.pres-card { position: absolute; inset: 0; margin: 0; border-radius: 28px; overflow: hidden; background: var(--ink); box-shadow: 0 50px 100px -40px rgba(0, 0, 0, .85), 0 0 0 1px var(--line); will-change: transform, opacity, filter; }
+.pres-card img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) {
+  .pres-grid { grid-template-columns: 1fr; gap: 22px; padding-top: 70px; }
+  .pres-stage { height: min(46vh, 440px); order: -1; }
+  .pres-texts { min-height: 230px; }
+  .pres-text h2 { font-size: clamp(32px, 9vw, 44px); }
+  .pres-text .lede { font-size: 16px; }
+  .pres-copy { gap: 16px; }
+  .pres-copy > .eyebrow { display: none; }
+}
+
+/* our projects: big stacking cards, each in its project's colour */
+.proj { position: relative; border-radius: 32px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; min-height: min(78vh, 640px); background: var(--pc-bg); color: var(--pc-fg); box-shadow: 0 -24px 60px -24px rgba(0, 0, 0, .6); }
+.proj-copy { padding: clamp(26px, 3.6vw, 52px); display: grid; align-content: space-between; gap: 26px; }
+.proj .k { font: 700 12px/1.4 var(--mono); letter-spacing: .2em; text-transform: uppercase; opacity: .75; }
+.proj h3 { font: 900 clamp(48px, 6.4vw, 104px)/.9 var(--display); font-stretch: 122%; letter-spacing: -.045em; margin: 14px 0 16px; }
+.proj h3 span { color: var(--pc-acc); }
+.proj p { font-size: clamp(16px, 1.4vw, 19px); max-width: 44ch; opacity: .85; }
+.proj-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: color-mix(in srgb, var(--pc-fg) 18%, transparent); border-radius: 18px; overflow: hidden; }
+.proj-stats div { background: var(--pc-bg); padding: 16px; display: grid; gap: 4px; }
+.proj-stats b { font: 860 clamp(22px, 2.4vw, 34px)/1 var(--display); font-stretch: 110%; letter-spacing: -.02em; color: var(--pc-acc); }
+.proj-stats span { font-size: 13px; opacity: .8; line-height: 1.35; }
+.proj .go { display: inline-flex; align-items: center; gap: 12px; margin-top: 24px; min-height: 54px; padding: 0 26px; border-radius: 99px; background: var(--pc-acc); color: var(--pc-ink); font-weight: 700; text-decoration: none; transition: box-shadow .3s; }
+.proj .go span { display: inline-block; transition: transform .3s var(--ease); }
+.proj:hover .go { box-shadow: 0 0 0 6px color-mix(in srgb, var(--pc-acc) 30%, transparent); }
+.proj:hover .go span { transform: translateX(6px); }
+/* the whole card opens the project, not just the button */
+.proj .go::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; }
+/* the two cards sit one under the other, so nothing ever covers a button */
+.projs { display: grid; gap: 22px; margin-top: 56px; }
+.proj-media { position: relative; overflow: hidden; }
+.proj-media img { position: absolute; inset: -12% 0; width: 100%; height: 124%; object-fit: cover; will-change: transform; }
+.proj-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--pc-bg) 0%, transparent 30%); }
+.proj-media .chip { position: absolute; right: 18px; top: 18px; z-index: 1; font: 700 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; background: var(--pc-acc); color: var(--pc-ink); padding: 9px 12px; border-radius: 99px; }
+@media (max-width: 900px) { .proj { grid-template-columns: 1fr; min-height: 0; } .proj-media { height: 260px; order: -1; } .proj-media::after { background: linear-gradient(0deg, var(--pc-bg) 0%, transparent 45%); } .proj-stats { grid-template-columns: 1fr 1fr 1fr; } }
+
+/* where we've been: a horizontal track */
+.legacy-head { padding-inline: var(--gut); max-width: 1240px; margin: 0 auto; width: 100%; }
+.past { width: min(80vw, 380px); flex: none; border-radius: 26px; padding: 26px; display: grid; gap: 14px; align-content: start; min-height: 380px; background: var(--ink); color: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+.past .yr { font: 700 12px/1 var(--mono); letter-spacing: .18em; color: var(--acc); }
+.past h3 { font-size: 30px; font-weight: 820; }
+.past p { color: var(--mute-d); font-size: 15.5px; }
+.past .big { font: 900 clamp(40px, 4vw, 56px)/1 var(--display); font-stretch: 116%; letter-spacing: -.03em; color: var(--acc); margin-top: auto; }
+.past .big small { display: block; font: 600 13px/1.3 var(--body); letter-spacing: 0; color: var(--mute-d); margin-top: 6px; }
+.past:first-child { background: var(--acc); color: var(--acc-ink); }
+.past:first-child p, .past:first-child .big small { color: color-mix(in srgb, var(--acc-ink) 75%, transparent); }
+.past:first-child .yr, .past:first-child .big { color: var(--acc-ink); }
+
+/* wins: cards flip up into place */
+.wins { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 228px), 1fr)); gap: 12px; margin-top: 56px; perspective: 1200px; }
+.win { border-radius: 22px; padding: 22px; min-height: 210px; display: grid; gap: 10px; align-content: space-between; background: #fff; box-shadow: 0 1px 0 rgba(0, 0, 0, .06), 0 18px 40px -26px rgba(0, 0, 0, .3); }
+.js .win[data-reveal] { transform: rotateX(-55deg) translateY(30px); transform-origin: 50% 100%; }
+.js .win[data-reveal].in { transform: none; }
+.win b { font: 900 clamp(30px, 3vw, 40px)/1 var(--display); font-stretch: 116%; letter-spacing: -.03em; }
+.win p { font-size: 14.5px; color: var(--mute); line-height: 1.45; }
+.win small { font: 700 11px/1.3 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.win.gold { background: var(--acc); }
+.win.gold p, .win.gold small { color: color-mix(in srgb, var(--acc-ink) 70%, transparent); }
+.win.ink { background: var(--ink); color: #fff; }
+.win.ink p, .win.ink small { color: var(--mute-d); }
+.win .tag { display: inline-block; font: 700 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; padding: 6px 8px; border-radius: 6px; background: color-mix(in srgb, var(--text) 8%, transparent); }
+.win.ink .tag { background: rgba(255, 255, 255, .12); }
+.win .tag.rose { background: #ff5a7e; color: #2a0610; }
+.win .tag.teal { background: #41c9c1; color: #061320; }
+.press { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 18px 22px; border-radius: 18px; background: var(--ink); color: #fff; }
+.press b { font: 700 12px/1 var(--mono); letter-spacing: .18em; color: var(--acc); text-transform: uppercase; }
+.press a { color: #fff; }
+
+.washes.on-dark { background: var(--deep); }
+.washes.on-dark .washes-label { color: var(--mute-d); }
+.washes.on-dark .wtrack span { color: #fff; }
+.washes.on-dark .wtrack span:nth-child(even) { color: transparent; -webkit-text-stroke: 1.5px #fff; }
+
+.join-card { display: grid; gap: 12px; }
+.join-card a { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; padding: 22px 24px; border-radius: 22px; text-decoration: none; color: inherit; background: color-mix(in srgb, var(--deep) 66%, transparent); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid var(--line); transition: transform .4s var(--ease), border-color .3s; }
+.join-card a:hover { transform: translateX(8px); border-color: var(--acc); }
+.join-card small { font: 700 11px/1 var(--mono); letter-spacing: .18em; color: var(--acc); text-transform: uppercase; }
+.join-card b { display: block; font: 800 24px/1.2 var(--display); font-stretch: 110%; margin-top: 6px; }
+.join-card span { color: var(--mute-d); font-size: 14px; }
+.join-card i { font-style: normal; font-size: 26px; }
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div class="intro" id="intro" data-key="home" aria-hidden="true">
+  <div class="intro-grid"></div>
+  <svg class="intro-wave" viewBox="0 0 1000 200" preserveAspectRatio="none"><path pathLength="1" d="M-20 170 L 140 150 L 230 160 L 330 120 L 420 132 L 520 86 L 610 98 L 720 52 L 820 64 L 1020 10"/></svg>
+  <div class="intro-flash"></div>
+  <div class="intro-streak"></div>
+  <span class="intro-spark"></span>
+  <div class="intro-title">
+    <div class="ghost">ENACTUS<span class="stop">.</span></div>
+    <div class="sl" style="--k:0;--dir:1">ENACTUS<span class="stop">.</span></div>
+    <div class="sl" style="--k:1;--dir:-1">ENACTUS<span class="stop">.</span></div>
+    <div class="sl" style="--k:2;--dir:1">ENACTUS<span class="stop">.</span></div>
+    <div class="sl" style="--k:3;--dir:-1">ENACTUS<span class="stop">.</span></div>
+    <div class="sl" style="--k:4;--dir:1">ENACTUS<span class="stop">.</span></div>
+    <div class="sl" style="--k:5;--dir:-1">ENACTUS<span class="stop">.</span></div>
+  </div>
+  <div class="intro-sub">H.R. COLLEGE · MUMBAI · SINCE 2009</div>
+  <button class="intro-skip" type="button">Skip intro</button>
+</div>
+
+<canvas id="trail" aria-hidden="true"></canvas>
+<div class="frame" aria-hidden="true"><span class="fr bl" id="frLabel">00 · ENACTUS HRC</span></div>
+<div class="notch" id="notch" aria-hidden="true"><span class="nd"></span><span class="nt" id="notchText"></span></div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Enactus H.R. College, top of page">
+      <span class="chip-logo"><img src="assets/enactus-logo.png" alt="Enactus" width="60" height="26"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span><b>H.R. COLLEGE</b><small>Mumbai · since 2009</small></span>
+    </a>
+    <ul class="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#legacy">Our story</a></li>
+      <li><a href="#wins">Wins</a></li>
+      <li><a href="#life">Life at Enactus</a></li>
+      <li class="sep" aria-hidden="true"></li>
+      <li><a href="inaayat.html">Inaayat</a></li>
+      <li><a href="sanchay.html">Sanchay</a></li>
+    </ul>
+    <a class="btn btn-y" href="#join">Join Enactus</a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="sheet"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="sheet" id="sheet" aria-label="Menu">
+  <a href="#about">About Enactus</a>
+  <a href="#projects">Our projects</a>
+  <a href="#presidents">Our presidents</a>
+  <a href="#legacy">Our story</a>
+  <a href="#wins">Wins</a>
+  <a href="#life">Life at Enactus</a>
+  <small>Projects</small>
+  <a href="inaayat.html">Project Inaayat</a>
+  <a href="sanchay.html">Project Sanchay</a>
+  <a class="btn btn-y" href="#join">Join Enactus</a>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="top" data-scene="ENACTUS HRC" style="--hp:50% 35%">
+  <div class="hero-bg"><img src="assets/ghtw-3-team.jpg" alt="The Enactus H.R. College team" referrerpolicy="no-referrer" fetchpriority="high"></div>
+  <a class="hero-badge" href="#wins" aria-label="3rd among 36 nations at the Enactus World Cup 2012">
+    <small>ENACTUS WORLD CUP · 2012</small>
+    <b>3rd</b>
+    <span>among 36 nations</span>
+  </a>
+  <div class="hero-main wrap">
+    <div class="hero-card spot">
+      <span class="eyebrow">Enactus H.R. College · Mumbai</span>
+      <h1 data-words>At Enactus, <em>you</em> be the change.</h1>
+      <p data-reveal style="--d:500ms">We're the Enactus chapter of H.R. College of Commerce &amp; Economics. Since 2009, our students have built small, sustainable businesses with communities, so the change keeps going after we leave.</p>
+      <div class="hero-ctas" data-reveal style="--d:650ms">
+        <a class="btn btn-y" href="#projects">See our projects <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a>
+        <a class="btn btn-o" href="#join">Join Enactus</a>
+      </div>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="strip-label">Recognised at</div>
+    <div class="marq" aria-hidden="true">
+      <span>Enactus World Cup 2012</span><span>Enactus India Nationals</span><span>National Award for Women Empowerment</span><span>E-Summit · IIT Roorkee</span><span>TISS Social Business Idea Competition</span><span>Red Dot Foundation</span><span>Featured in Mid-day</span><span>Recognised by NMMC</span>
+      <span>Enactus World Cup 2012</span><span>Enactus India Nationals</span><span>National Award for Women Empowerment</span><span>E-Summit · IIT Roorkee</span><span>TISS Social Business Idea Competition</span><span>Red Dot Foundation</span><span>Featured in Mid-day</span><span>Recognised by NMMC</span>
+    </div>
+    <p class="sr-only">Recognised at the Enactus World Cup 2012, Enactus India Nationals, Bhavishya Bharat National Award, E-Summit IIT Roorkee, TISS, Red Dot Foundation, featured in Mid-day and recognised by NMMC.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="impact" data-scene="IMPACT">
+  <div class="wrap">
+    <div class="stats-head">
+      <h2 data-words>Seventeen years of entrepreneurial action.</h2>
+      <p data-reveal>Every project starts with a community and ends with a business that can run without us.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat spot" data-reveal><div class="big"><span class="odo" data-to="17"></span><small>years</small></div><h4>Of projects</h4><p>Since Project Chirag in 2009.</p></div>
+      <div class="stat spot" data-reveal style="--d:90ms"><div class="big"><span class="odo" data-to="50000"></span><small>+</small></div><h4>Lives impacted</h4><p>By Project Inaayat since 2018.</p></div>
+      <div class="stat spot" data-reveal style="--d:180ms"><div class="big"><span class="odo" data-to="7000"></span><small>kg</small></div><h4>Ocean plastic recovered</h4><p>By Project Sanchay from Mumbai's coast.</p></div>
+      <div class="stat spot" data-reveal style="--d:270ms"><div class="big"><span class="odo" data-to="297"></span></div><h4>Villages lit</h4><p>By the solar lamps of Project Chirag.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EN + ACT + US -->
+<section class="kin" id="meaning" data-scene="EN · ACT · US" aria-label="Entrepreneurial, Action, Us: Enactus" style="--kcol:var(--paper)">
+  <div class="kin-stick" aria-hidden="true">
+    <span class="kin-cap">What the name means</span>
+    <div class="kin-word" data-bg="#ffc21a" data-fg="#0b0b0e" style="font-size:clamp(34px,7.4vw,150px)">EN<span class="dim">TREPRENEURIAL</span></div>
+    <div class="kin-word glitch" data-bg="#16161b" data-fg="#ffffff"><span class="g-base">ACT<span class="dim">ION</span></span><span class="g-s" style="--s:0">ACT<span class="dim">ION</span></span><span class="g-s" style="--s:1">ACT<span class="dim">ION</span></span><span class="g-s" style="--s:2">ACT<span class="dim">ION</span></span><span class="g-s" style="--s:3">ACT<span class="dim">ION</span></span><span class="g-s" style="--s:4">ACT<span class="dim">ION</span></span><span class="smear"></span></div>
+    <div class="kin-word" data-bg="#faf8f2" data-fg="#0b0b0e">US</div>
+    <div class="kin-word" data-bg="#0b0b0e" data-fg="#ffc21a"><span class="part" style="--fx:-60vw;--fy:-30vh" data-rot="-25">EN</span><span class="part" style="--fx:0vw;--fy:50vh" data-rot="15">ACT</span><span class="part" style="--fx:60vw;--fy:-30vh" data-rot="25">US</span><span class="part" style="--fx:0vw;--fy:-50vh">.</span></div>
+    <div class="kin-cols"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <h2 class="kin-static">Entrepreneurial. Action. Us. Enactus.</h2>
+</section>
+
+<!-- ABOUT ENACTUS -->
+<section class="sec" id="about" data-scene="ABOUT ENACTUS">
+  <div class="wrap about-grid">
+    <div>
+      <div class="sec-head">
+        <span class="eyebrow">What is Enactus?</span>
+        <h2 data-words>One of 1,600+ chapters worldwide.</h2>
+        <p class="lede" data-reveal>Enactus, formerly Students in Free Enterprise, is a community of student, academic and business leaders using entrepreneurial action to transform lives and shape a better, more sustainable world.</p>
+      </div>
+      <div class="eau" data-reveal>
+        <div><b><i>EN</i></b><p><strong>Entrepreneurial:</strong> igniting business innovation with integrity and passion.</p></div>
+        <div><b><i>ACT</i></b><p><strong>Action:</strong> the experience of social impact that sparks social enterprise.</p></div>
+        <div><b><i>US</i></b><p><strong>Us:</strong> student, academic and business leaders collaborating to create a better world.</p></div>
+      </div>
+      <div class="tbl" data-reveal><span>Triple bottom line</span><span>Economic</span><span>Social</span><span>Environmental</span></div>
+    </div>
+    <div class="globe-wrap" data-reveal>
+      <canvas id="globe" aria-hidden="true"></canvas>
+      <div class="globe-tag"><b>Mumbai</b>Enactus H.R. College</div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:clamp(80px,10vw,140px)">
+    <p class="statement fill-words">We believe in investing in students who take entrepreneurial action for others, to create a better world for us all.</p>
+  </div>
+</section>
+
+<!-- HOW A CHAPTER WORKS -->
+<section class="sec sand" id="chapter" data-scene="OUR CHAPTER">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How we work</span>
+      <h2 data-words>Not charity. A business that lasts.</h2>
+      <p class="lede" data-reveal>We work with communities at the grassroots and build sustainable business models with them. Our projects have reached more than seven states.</p>
+    </div>
+    <div class="flow">
+      <article class="spot" data-reveal><svg class="draw" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle pathLength="1" cx="20" cy="20" r="12"/><path pathLength="1" d="m29 29 10 10"/></svg><h3>Find a need</h3><p>Visit the community first. Our Charoti visit found 80% of women without adequate sanitary facilities.</p></article>
+      <article class="spot" data-reveal style="--d:100ms"><svg class="draw" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M6 36h34M10 36V24m10 12V16m10 20V20m10 16V8"/></svg><h3>Build the model</h3><p>Design a product or service that pays for itself: kits, credits, products people want to buy.</p></article>
+      <article class="spot" data-reveal style="--d:200ms"><svg class="draw" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle pathLength="1" cx="16" cy="16" r="6"/><circle pathLength="1" cx="31" cy="16" r="6"/><path pathLength="1" d="M5 38c0-7 5-12 11-12s11 5 11 12M24 30c2-3 4-4 7-4 6 0 10 5 10 12"/></svg><h3>Run it together</h3><p>The community does the work and earns from it: stitching kits, recovering plastic.</p></article>
+      <article class="spot" data-reveal style="--d:300ms"><svg class="draw" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M6 34 18 22l8 8 14-16"/><path pathLength="1" d="M30 14h10v10"/></svg><h3>Measure and grow</h3><p>Count the kilos, the kits and the lives, then take it further each year.</p></article>
+    </div>
+    <div class="guides">
+      <div class="guide" data-reveal><small>Guided by</small><b>Dr. Pooja Ramchandani, Principal, and Mrs. Kanupriya Sharma, Teacher-in-Charge</b><p>H.R. College of Commerce &amp; Economics, Mumbai.</p></div>
+      <div class="guide" data-reveal style="--d:120ms"><small>Run by students</small><b>Teams that run it like a company</b><div class="depts"><span>Operations</span><span>Business Development</span><span>Finance</span><span>Events</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESIDENTS -->
+<section class="pres dark" id="presidents" data-scene="PRESIDENTS" aria-label="Our presidents">
+  <div class="pres-stick">
+    <div class="wrap pres-grid">
+      <div class="pres-copy">
+        <span class="eyebrow">Meet the leadership</span>
+        <div class="pres-texts">
+          <article class="pres-text on">
+            <span class="pres-n">President · 01</span>
+            <h2>Vaishnavi Chaturvedi</h2>
+            <p class="pres-role">The President behind the vision</p>
+            <p class="lede">Keeping the vision clear while bringing together people, projects and possibilities, and turning what we want to achieve into a direction the whole team can move towards.</p>
+          </article>
+          <article class="pres-text">
+            <span class="pres-n">President · 02</span>
+            <h2>Bhavika Jhawar</h2>
+            <p class="pres-role">The President behind the team</p>
+            <p class="lede">A team this big needs someone who sees the people behind the work. From ideas to challenges, keeping everyone connected, motivated and moving forward together.</p>
+          </article>
+        </div>
+        <div class="pres-nav">
+          <button type="button" aria-label="Show Vaishnavi Chaturvedi"><i></i></button>
+          <button type="button" aria-label="Show Bhavika Jhawar"><i></i></button>
+          <span class="pres-count" aria-hidden="true"><b>01</b> / 02</span>
+        </div>
+      </div>
+      <div class="pres-stage">
+        <figure class="pres-card"><img src="assets/president-vaishnavi-chaturvedi.jpg" alt="Vaishnavi Chaturvedi, President, Enactus H.R. College" loading="lazy"></figure>
+        <figure class="pres-card"><img src="assets/president-bhavika-jhawar.jpg" alt="Bhavika Jhawar, President, Enactus H.R. College" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROJECTS -->
+<section class="sec dark" id="projects" data-scene="OUR PROJECTS">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our projects</span>
+      <h2 data-words>Two projects. Real change, on the ground.</h2>
+      <p class="lede" data-reveal>Scroll through them, then open either one for the whole story.</p>
+    </div>
+    <div class="projs">
+      <article class="proj" data-reveal style="--pc-bg:#2a1222;--pc-fg:#fff;--pc-acc:#ff5a7e;--pc-ink:#2a0610">
+        <div class="proj-copy">
+          <div>
+            <span class="k">Project 01 · since 2018 · menstrual health</span>
+            <h3>Inaayat<span>.</span></h3>
+            <p>Menstrual hygiene sessions with schools and NGOs, and reusable sanitary kits stitched by women from underserved communities. India's first chapter under Days for Girls.</p>
+            <a class="go" href="inaayat.html">Explore Inaayat <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="proj-stats">
+            <div><b>50,000+</b><span>lives impacted</span></div>
+            <div><b>1,000</b><span>kits each Give Her the Wings</span></div>
+            <div><b>Top 4</b><span>Envision 2026, IIT Roorkee</span></div>
+          </div>
+        </div>
+        <div class="proj-media"><span class="chip">New · GHTW 2026</span><img src="assets/mhm-session-aug-2025.jpg" alt="A menstrual hygiene session run by Project Inaayat" referrerpolicy="no-referrer" loading="lazy" style="inset:auto 0;top:-2%;height:162%;object-position:50% 0"></div>
+      </article>
+      <article class="proj" data-reveal style="--pc-bg:#0b2236;--pc-fg:#fff;--pc-acc:#ffc21a;--pc-ink:#1a1400">
+        <div class="proj-copy">
+          <div>
+            <span class="k">Project 02 · since 2025 · ocean plastic</span>
+            <h3>Sanchay<span>.</span></h3>
+            <p>We recover plastic from Mumbai's coastline, send it for recycling, and create paid work for women waste-pickers. Plastic credits keep it going.</p>
+            <a class="go" href="sanchay.html">Explore Sanchay <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="proj-stats">
+            <div><b>7,000 kg</b><span>ocean plastic recovered</span></div>
+            <div><b>₹1.6 lakh</b><span>revenue from credits and scrap</span></div>
+            <div><b>Top 20</b><span>Enactus India Nationals 2025</span></div>
+          </div>
+        </div>
+        <div class="proj-media"><span class="chip">80,000 kg goal</span><img src="assets/shoreline-mahim.jpg" alt="A waste-picker collecting plastic on the shore at Mahim" loading="lazy" style="inset:auto 0;top:-4%;height:172%;object-position:50% 0"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY: past projects -->
+<section class="hscroll dark" id="legacy" data-scene="OUR STORY">
+  <div class="hs-stick">
+    <div class="legacy-head sec-head">
+      <span class="eyebrow">Where we've been</span>
+      <h2 data-words>Seventeen years, one idea at a time.</h2>
+    </div>
+    <div class="htrack">
+      <article class="past"><span class="yr">2009 – 2012 · OUR FIRST PROJECT</span><h3>Chirag</h3><p>"Light for All": differently-abled communities assembled, tested and maintained solar lamps for villages without grid power. It took us to the Enactus World Cup 2012, 3rd among 36 nations, and became the Chirag Rural Development Foundation.</p><div class="big">11,918<small>houses lit across 297 villages</small></div></article>
+      <article class="past"><span class="yr">2012 – 2015</span><h3>Aasha</h3><p>Trained women from underprivileged communities as skilled beauty professionals, so they could earn for their families.</p><div class="big">50+<small>women trained</small></div></article>
+      <article class="past"><span class="yr">2015</span><h3>The Peach Vibe</h3><p>Aasha's next phase: workplace wellness sessions for companies, delivered by women from the community as massage therapists.</p><div class="big">2-in-1<small>less stress at work, more jobs for women</small></div></article>
+      <article class="past"><span class="yr">EARLIER</span><h3>Saarthi</h3><p>Literacy and English proficiency for underprivileged communities.</p><div class="big">ABC<small>language as a way up</small></div></article>
+      <article class="past"><span class="yr">EARLIER</span><h3>Jalvruddhi</h3><p>Low-cost water filters for rural families, sold through community champions trained in the village, with sessions on water conservation.</p><div class="big">H₂O<small>clean water, run by the village</small></div></article>
+      <article class="past"><span class="yr">LIVELIHOOD</span><h3>Aajeevika</h3><p>"Livelihood": rural women of Maharashtra trained as seamstresses, making zero-waste bags, scrunchies and pouches from fabric cut-offs.</p><div class="big">2,000<small>bags sold</small></div></article>
+      <article class="past"><span class="yr">2024 – 25</span><h3>Samudra Manthan</h3><p>Recycling ghost nets and supporting Mumbai's fishing communities. Its waste-offsetting pilots grew into Project Sanchay.</p><div class="big">Best Innovation<small>Envision 2025, IIT Roorkee</small></div></article>
+    </div>
+    <div class="hs-bar" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<!-- WINS -->
+<section class="sec sand" id="wins" data-scene="WINS">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Wins</span>
+      <h2 data-words>Recognised, from Mumbai to the world.</h2>
+    </div>
+    <div class="wins">
+      <article class="win gold" data-reveal><small>Enactus World Cup · 2012</small><b>3rd of 36 nations</b><p>Project Chirag represented India on the world stage.</p></article>
+      <article class="win" data-reveal style="--d:60ms"><small>Bhavishya Bharat · 2022</small><b>National Award</b><p>Best Social Initiative for Women Empowerment, among 186 colleges.</p><span class="tag rose">Inaayat + Aajeevika</span></article>
+      <article class="win ink" data-reveal style="--d:120ms"><small>Enactus India Nationals · 2024</small><b>Top 20 of 60</b><p>Selected for the Mature Stage competition at Amity University, Delhi.</p></article>
+      <article class="win" data-reveal style="--d:180ms"><small>Envision · IIT Roorkee · 2025</small><b>Best Innovation</b><p>Top 4 of 478 national teams.</p><span class="tag">Samudra Manthan</span></article>
+      <article class="win" data-reveal style="--d:240ms"><small>TISS · 2025</small><b>Top 10 of 128</b><p>Two teams in the Social Business Idea Competition.</p></article>
+      <article class="win ink" data-reveal style="--d:60ms"><small>Enactus India Nationals · 2025</small><b>Top 20 in India</b><p>Early Stage category.</p><span class="tag teal">Sanchay</span></article>
+      <article class="win gold" data-reveal style="--d:120ms"><small>Envision · IIT Roorkee · 2026</small><b>Top 4</b><p>Mature Stage, at E-Summit '26.</p><span class="tag rose">Inaayat</span></article>
+      <article class="win" data-reveal style="--d:180ms"><small>Red Dot Foundation · Safecity</small><b>2nd of 105</b><p>Youth Innovation Challenge, with UN-Habitat and UNICEF among the partners.</p><span class="tag rose">Inaayat</span></article>
+      <article class="win" data-reveal style="--d:240ms"><small>Enactus India</small><b>Enactus Cares</b><p>Winner of the Enactus Cares competition.</p></article>
+      <article class="win ink" data-reveal style="--d:300ms"><small>Navi Mumbai · 2026</small><b>Recognised by NMMC</b><p>For our work recovering sea waste.</p><span class="tag teal">Sanchay</span></article>
+    </div>
+    <div class="press" data-reveal><b>In the news</b><span>"HR College students lead 'Project Inaayat' to promote menstrual hygiene across Maharashtra"</span><a href="https://www.mid-day.com/mumbai/mumbai-news/article/hr-college-students-lead-project-inaayat-to-promote-menstrual-hygiene-across-maharashtra-23600505" target="_blank" rel="noopener">Mid-day, Oct 2025 ↗</a></div>
+  </div>
+</section>
+
+<!-- LIFE AT ENACTUS -->
+<section class="washes on-dark" aria-label="What we do all year">
+  <p class="washes-label">A year at Enactus HRC</p>
+  <div class="wrow"><div class="wtrack"><span>Village campaigns</span><span>Beach clean-ups</span><span>MHM sessions</span><span>Synapse</span><span>Nationals</span><span>Village campaigns</span><span>Beach clean-ups</span><span>MHM sessions</span><span>Synapse</span><span>Nationals</span></div></div>
+  <div class="wrow"><div class="wtrack"><span>Stalls</span><span>Case competitions</span><span>Webinars</span><span>Icebreakers</span><span>Pitches</span><span>Stalls</span><span>Case competitions</span><span>Webinars</span><span>Icebreakers</span><span>Pitches</span></div></div>
+</section>
+<section class="sec dark" id="life" data-scene="LIFE AT ENACTUS" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Life at Enactus</span>
+      <h2 data-words>The people behind the projects.</h2>
+      <p class="lede" data-reveal>Clean-ups at sunrise, village sessions, stalls at every fest, and Synapse, our first one-day intercollegiate conclave with panels, SDG stalls and a case study competition. Tap a photo to see it bigger.</p>
+    </div>
+    <div class="gal" id="gal"></div>
+    <div class="vids">
+      <button class="vid" data-yt="-H4hjcfbUrQ" aria-label="All about Enactus HRC" data-reveal><span class="play"></span><span>All about Enactus HRC</span></button>
+      <button class="vid" data-yt="L9gEoraBItY" aria-label="Enactus India National Exposition 2024" data-reveal style="--d:100ms"><span class="play"></span><span>Enactus India National Exposition 2024</span></button>
+      <button class="vid" data-yt="9nrTreksffA" aria-label="Project Inaayat, 77-second film" data-reveal style="--d:200ms"><span class="play"></span><span>Project Inaayat · 77-second film</span></button>
+    </div>
+  </div>
+</section>
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <img id="lbImg" alt="" referrerpolicy="no-referrer">
+  <div class="lb-bar"><button id="lbPrev" aria-label="Previous photo">‹</button><p id="lbCap"></p><button id="lbNext" aria-label="Next photo">›</button><button id="lbClose" aria-label="Close">✕</button></div>
+</dialog>
+
+<!-- JOIN -->
+<section class="sec partner on-photo" id="join" data-scene="JOIN US">
+  <div class="partner-bg"><img src="assets/team-on-beach.jpg" alt="" loading="lazy" style="object-position:50% 70%"></div>
+  <div class="wrap partner-grid">
+    <div>
+      <span class="eyebrow">Join us</span>
+      <h2 data-words>Ready to be the change?</h2>
+      <p class="lede" data-reveal>Whatever your stream, there's a team for you: operations, business development, finance, events. Come for the projects, stay for the people.</p>
+      <div class="ctas" data-reveal style="--d:150ms">
+        <a class="btn btn-y" href="https://ig.me/m/enactushrc" target="_blank" rel="noopener">Message @enactushrc</a>
+        <a class="btn btn-o" href="https://www.linkedin.com/company/enactus-h-r-college/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+    <div class="join-card" data-reveal>
+      <a href="inaayat.html#partner"><div><small>Partner · Inaayat</small><b>Sponsor menstrual kits</b><span>About ₹170 a kit, for the next campaign.</span></div><i aria-hidden="true">→</i></a>
+      <a href="sanchay.html#partner"><div><small>Partner · Sanchay</small><b>Buy plastic credits</b><span>₹50 a credit, for Mumbai's coast.</span></div><i aria-hidden="true">→</i></a>
+      <a href="https://www.instagram.com/enactushrc/" target="_blank" rel="noopener"><div><small>Follow</small><b>@enactushrc</b><span>Everything we do, as it happens.</span></div><i aria-hidden="true">↗</i></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logos">
+          <span class="chip-logo"><img src="assets/enactus-logo.png" alt="Enactus" loading="lazy"></span>
+          <span class="chip-logo hrc"><img src="assets/hr-college-logo.png" alt="H.R. College of Commerce &amp; Economics" loading="lazy"></span>
+        </div>
+        <div class="endcard">
+          <div class="ec-stage" aria-label="Enactus">
+            <span class="ec-ring" style="--s:220px;--dl:0ms"></span><span class="ec-ring" style="--s:150px;--dl:130ms"></span><span class="ec-ring" style="--s:84px;--dl:260ms"></span>
+            <span class="ec-dot"></span>
+            <div class="ec-word">ENACTUS<span>.</span></div>
+          </div>
+          <svg class="ec-wave" viewBox="0 0 600 30" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 26 L 90 22 L 150 24 L 230 16 L 300 18 L 380 10 L 450 12 L 530 4 L 600 2"/></svg>
+          <p class="ec-line" data-type="At Enactus, you be the change."></p>
+        </div>
+        <p class="about">Enactus H.R. College is the Enactus chapter of H.R. College of Commerce &amp; Economics, Mumbai, and one of 1,600+ Enactus chapters worldwide.</p>
+        <button class="copy" type="button"><span class="copy-fill"></span><span class="copy-t">Copy page link</span></button>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="#about">About Enactus</a></li><li><a href="#presidents">Our presidents</a></li><li><a href="#projects">Our projects</a></li><li><a href="inaayat.html">Project Inaayat</a></li><li><a href="sanchay.html">Project Sanchay</a></li><li><a href="#wins">Wins</a></li><li><a href="#join">Join us</a></li></ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul><li><a href="https://www.instagram.com/enactushrc/" target="_blank" rel="noopener">Instagram ↗</a></li><li><a href="https://www.linkedin.com/company/enactus-h-r-college/" target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href="https://www.youtube.com/@enactushrcollege4328" target="_blank" rel="noopener">YouTube ↗</a></li><li><a href="https://x.com/EnactusHrc" target="_blank" rel="noopener">X ↗</a></li><li><a href="https://www.hrcollege.edu/enactus-hrc/" target="_blank" rel="noopener">On the H.R. College site ↗</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Enactus H.R. College</span>
+      <span>Photos: Enactus HRC. Enactus logo by Enactus, <a href="https://commons.wikimedia.org/wiki/File:Enactus_Full_Color_logo.png" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // gallery photos; add your own the same way, e.g. { src: 'assets/synapse.jpg', cap: '…', c: 6, r: 3 }
+  window.GALLERY = [
+    { src: 'assets/ghtw-3-team.jpg', cap: 'Give Her the Wings 3.0, Palghar', c: 7, r: 4 },
+    { src: 'assets/team-on-beach.jpg', cap: 'Beach clean-up, Mumbai', c: 5, r: 4 },
+    { src: 'assets/team-enactus.jpg', cap: 'Team Enactus HRC', c: 4, r: 3 },
+    { src: 'assets/ifat-india-2025.jpg', cap: 'At IFAT India 2025', c: 4, r: 3 },
+    { src: 'assets/orientation-stall-2025.jpg', cap: 'Orientation stall, July 2025', c: 4, r: 3 },
+    { src: 'assets/mhm-session-aug-2025.jpg', cap: 'A menstrual hygiene session, August 2025', c: 6, r: 3 },
+    { src: 'assets/team-with-sacks.jpg', cap: 'A Sanchay clean-up on Mumbai\'s coast', c: 6, r: 3 },
+    { src: 'assets/team-2025.jpg', cap: 'The team, 2025', c: 5, r: 3 },
+    { src: 'assets/cleanup-drive-partners.jpg', cap: 'A clean-up drive with partners', c: 7, r: 3 }
+  ];
+</script>
+<script src="assets/enactus.js?v=5"></script>
+<script>
+(() => {
+  const { $, $$, reduce, onScroll, whenVisible, fit, progress, clamp, inOut } = window.EN;
+
+  /* ── a globe of 1,600 chapters turns, and Mumbai pulses ── */
+  (() => {
+    const cv = $('#globe');
+    const ctx = cv.getContext('2d');
+    const N = 1600, golden = Math.PI * (3 - Math.sqrt(5));
+    const dots = Array.from({ length: N }, (_, i) => {
+      const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), th = golden * i;
+      return [Math.cos(th) * r, y, Math.sin(th) * r];
+    });
+    const lat = 19.07 * Math.PI / 180, lon = 72.88 * Math.PI / 180;
+    const home = [Math.cos(lat) * Math.cos(lon), Math.sin(lat), Math.cos(lat) * Math.sin(lon)];
+    let W = 0, H = 0, dpr = 1, live = false;
+    const size = () => { ({ W, H, dpr } = fit(cv)); };
+    const draw = now => {
+      const R = Math.min(W, H) * .4, cx = W / 2, cy = H * .45;
+      const ry = reduce ? -lon + Math.PI / 2 : now * .00018, rx = .35;
+      const cY = Math.cos(ry), sY = Math.sin(ry), cX = Math.cos(rx), sX = Math.sin(rx);
+      const proj = ([x, y, z]) => {
+        const x1 = x * cY + z * sY, z1 = -x * sY + z * cY, y1 = -(y * cX - z1 * sX), z2 = y * sX + z1 * cX;
+        return [cx + x1 * R, cy + y1 * R, z2];
+      };
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      const back = new Path2D(), front = new Path2D();
+      for (const d of dots) {
+        const [x, y, z] = proj(d);
+        const P = z < 0 ? front : back, s = z < 0 ? 1.6 : 1;
+        P.moveTo(x + s, y); P.arc(x, y, s, 0, 6.283);
+      }
+      ctx.fillStyle = 'rgba(21,21,26,.14)'; ctx.fill(back);
+      ctx.fillStyle = 'rgba(21,21,26,.55)'; ctx.fill(front);
+      const [hx, hy, hz] = proj(home);
+      if (hz < .2) {
+        const t = (now % 2000) / 2000;
+        ctx.beginPath(); ctx.arc(hx, hy, 6 + t * 26, 0, 6.283);
+        ctx.strokeStyle = `rgba(224,162,0,${1 - t})`; ctx.lineWidth = 2; ctx.stroke();
+        ctx.beginPath(); ctx.arc(hx, hy, 6, 0, 6.283); ctx.fillStyle = '#ffc21a'; ctx.fill();
+        ctx.lineWidth = 1.5; ctx.strokeStyle = '#15151a'; ctx.stroke();
+      }
+      if (live && !reduce) requestAnimationFrame(draw);
+    };
+    addEventListener('resize', () => { size(); if (reduce) draw(0); });
+    whenVisible(cv, () => { if (!live) { size(); live = true; requestAnimationFrame(draw); } }, () => { live = false; });
+  })();
+
+  /* ── presidents: the first card steps back and dims as the second rises over it ── */
+  (() => {
+    const sec = $('#presidents');
+    const cards = $$('.pres-card', sec), texts = $$('.pres-text', sec), dots = $$('.pres-nav button', sec), count = $('.pres-count b', sec);
+    let cur = 0;
+    onScroll(() => {
+      const p = progress(sec), k = inOut(clamp((p - .3) / .4));
+      cards[0].style.transform = `translate3d(0, ${(-4 * k).toFixed(2)}%, 0) scale(${(1 - .07 * k).toFixed(4)})`;
+      cards[0].style.filter = k > .01 ? `brightness(${(1 - .55 * k).toFixed(3)})` : 'none';
+      cards[1].style.transform = `translate3d(0, ${(14 * (1 - k)).toFixed(2)}%, 0) scale(${(.94 + .06 * k).toFixed(4)})`;
+      // the second card turns solid early, so it rises over the first instead of ghosting through it
+      cards[1].style.opacity = clamp(k * 3).toFixed(3);
+      dots[0].style.setProperty('--f', clamp(p / .5).toFixed(3));
+      dots[1].style.setProperty('--f', clamp((p - .5) / .5).toFixed(3));
+      const i = k < .5 ? 0 : 1;
+      if (i !== cur) { cur = i; texts.forEach((t, j) => t.classList.toggle('on', j === i)); count.textContent = '0' + (i + 1); }
+    });
+    // the bars double as buttons that scroll to each president
+    dots.forEach((d, i) => d.addEventListener('click', () => {
+      scrollTo({ top: sec.offsetTop + (sec.offsetHeight - innerHeight) * (i ? .9 : .05), behavior: reduce ? 'auto' : 'smooth' });
+    }));
+  })();
+
+  /* ── project photos drift inside their cards ── */
+  (() => {
+    if (reduce) return;
+    const imgs = $$('.proj-media img');
+    onScroll(() => imgs.forEach(img => {
+      const r = img.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      img.style.transform = `translate3d(0, ${((r.top + r.height / 2 - innerHeight / 2) * -.08).toFixed(1)}px, 0)`;
+    }));
+  })();
+})();
+</script>
+</body>
+</html>
