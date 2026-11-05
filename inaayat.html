@@ -18,8 +18,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/enactus.css?v=5">
-<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="assets/enactus.css?v=6">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.EN)document.documentElement.classList.remove('js')},4000)</script>
 <style>
 /* Inaayat's palette: wine at night, blush by day, rose for action, Enactus yellow as the second voice */
 :root {
@@ -41,9 +41,8 @@
 .latest { background: var(--ink); color: #fff; }
 .latest-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
 .latest .tag-new { display: inline-flex; align-items: center; gap: 10px; background: var(--acc); color: var(--acc-ink); font: 700 12px/1 var(--mono); letter-spacing: .18em; padding: 9px 12px; border-radius: 8px; width: max-content; }
-.latest .tag-new::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--acc-ink); animation: blinkdot 1.2s steps(1) infinite; }
-@keyframes blinkdot { 50% { opacity: .2; } }
-.latest h2 { font-size: clamp(38px, 5vw, 68px); }
+.latest .tag-new::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--acc-ink); }
+.latest h2 { font-size: clamp(34px, 4.4vw, 58px); }
 .latest .lede { color: var(--mute-d); }
 .latest .also { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border-radius: 18px; overflow: hidden; }
 .latest .also div { background: color-mix(in srgb, var(--deep) 60%, var(--ink)); padding: 16px 18px; display: grid; grid-template-columns: 92px 1fr; gap: 14px; font-size: 15px; color: var(--mute-d); }
@@ -52,64 +51,24 @@
 .latest .reel iframe { height: 600px; }
 @media (max-width: 960px) { .latest-grid { grid-template-columns: 1fr; } .latest .reels, .latest .also { grid-template-columns: 1fr; } }
 
-/* problem: 100 girls, then the waste pile, then a heart */
-.problem { position: relative; height: 340vh; background: var(--deep); color: #fff; }
-.p-stick { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
-#units { position: absolute; inset: 0; width: 100%; height: 100%; }
-.p-text { position: absolute; inset: 0; display: flex; align-items: center; pointer-events: none; }
-.p-text .wrap { width: 100%; }
-.slides { position: relative; max-width: 540px; min-height: 420px; }
-.pslide { position: absolute; inset: 0; display: grid; align-content: center; gap: 22px; opacity: 0; transform: translateY(28px); filter: blur(8px); transition: opacity .7s var(--ease), transform .8s var(--ease), filter .7s; }
-.pslide.on { opacity: 1; transform: none; filter: none; }
-.pslide h2 { font-size: clamp(34px, 4.6vw, 64px); }
-.pslide h2 .big { color: var(--acc); }
-.pslide p { font-size: clamp(17px, 1.5vw, 20px); color: var(--mute-d); max-width: 46ch; }
-.unit-label { position: absolute; left: var(--ux, 72%); top: var(--uy, 88%); transform: translate(-50%, 0); text-align: center; font: 700 12px/1.5 var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--mute-d); pointer-events: none; transition: opacity .4s; }
-.unit-label b { display: block; font: 860 clamp(28px, 3vw, 44px)/1 var(--display); letter-spacing: -.02em; color: #fff; text-transform: none; margin-bottom: 6px; }
-.p-prog { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(28px + env(safe-area-inset-bottom, 0px)); display: flex; gap: 8px; }
-.p-prog i { width: 34px; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, .2); overflow: hidden; position: relative; }
-.p-prog i::after { content: ""; position: absolute; inset: 0; background: var(--acc); transform-origin: left; transform: scaleX(var(--f, 0)); }
-@media (max-width: 1000px) { .p-text { align-items: flex-start; padding-top: 96px; } .slides { min-height: 300px; } .pslide { align-content: start; } .p-text::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--deep) 92%, transparent) 0%, color-mix(in srgb, var(--deep) 70%, transparent) 42%, transparent 58%); } }
-.problem.static { height: auto; }
-.problem.static .p-stick { position: relative; height: auto; padding-block: 110px; }
-.problem.static #units, .problem.static .unit-label, .problem.static .p-prog { display: none; }
-.problem.static .p-text { position: relative; padding-top: 0; }
-.problem.static .slides { min-height: 0; display: grid; gap: 60px; }
-.problem.static .pslide { position: relative; opacity: 1; transform: none; filter: none; }
-
-/* how it works: cards on a horizontal track */
-.how-head { padding-inline: var(--gut); max-width: 1240px; margin: 0 auto; width: 100%; }
-.step-card { width: min(78vw, 460px); flex: none; border-radius: 28px; overflow: hidden; background: var(--paper); color: var(--text); display: grid; grid-template-rows: 240px auto; }
-.step-card .media { position: relative; background: var(--ink); overflow: hidden; }
-.step-card .media img { width: 100%; height: 100%; object-fit: cover; }
-.step-card .media.art { display: grid; place-items: center; background: radial-gradient(120% 90% at 50% 0%, #4a1a36 0%, var(--ink) 65%); }
-.step-card .media.art svg { width: 140px; height: auto; }
-.step-card .body { padding: 24px 26px 28px; display: grid; gap: 10px; }
-.step-card .n { font: 700 12px/1 var(--mono); letter-spacing: .18em; color: var(--acc-deep); }
-.step-card h3 { font-size: 28px; font-weight: 820; }
-.step-card p { color: var(--mute); font-size: 16px; }
-@media (max-height: 700px) { .step-card { grid-template-rows: 170px auto; } }
-
-/* the kit comes apart as you scroll */
-.kit { position: relative; height: 240vh; background: var(--sand); }
-.kit-stick { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 24px; }
-.kit-copy { padding-left: max(var(--gut), calc((100vw - 1240px) / 2 + var(--gut))); display: grid; gap: 20px; }
-.kit-copy h2 { font-size: clamp(36px, 4.6vw, 64px); }
+/* the kit: the pouch with what's inside laid out around it */
+.kit { background: var(--sand); }
+.kit-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 24px; }
+.kit-copy { display: grid; gap: 20px; }
+.kit-copy h2 { font-size: clamp(34px, 4.2vw, 56px); }
 .kit-note { font-size: 15px; color: var(--mute); border-left: 3px solid var(--acc); padding-left: 14px; }
-.kit-stage { position: relative; height: min(78vh, 640px); --k: 0; }
-.kit-item { position: absolute; left: 50%; top: 50%; display: grid; justify-items: center; gap: 8px; transform: translate(-50%, -50%) translate(calc(var(--tx) * var(--k)), calc(var(--ty) * var(--k))) rotate(calc(var(--r, 0deg) * var(--k))) scale(calc(.55 + .45 * var(--k))); }
+.kit-stage { position: relative; height: 560px; }
+.kit-item { position: absolute; left: 50%; top: 50%; display: grid; justify-items: center; gap: 8px; transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) rotate(var(--r, 0deg)); }
 .kit-item svg { width: var(--w, 110px); height: auto; filter: drop-shadow(0 14px 18px rgba(42, 18, 34, .18)); }
-.kit-item span { font: 700 11px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text); background: #fff; padding: 6px 9px; border-radius: 8px; white-space: nowrap; opacity: calc((var(--k) - .7) * 3.4); box-shadow: 0 6px 14px rgba(42, 18, 34, .1); }
-.kit-pouch { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(calc(1 - .25 * var(--k))); opacity: calc(1 - var(--k) * .55); }
+.kit-item span { font: 700 11px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text); background: #fff; padding: 6px 9px; border-radius: 8px; white-space: nowrap; box-shadow: 0 6px 14px rgba(42, 18, 34, .1); }
+.kit-pouch { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.8); }
 .kit-pouch svg { width: 190px; height: auto; }
-@media (max-width: 900px) {
-  .kit { height: auto; }
-  .kit-stick { position: relative; height: auto; grid-template-columns: 1fr; padding: 90px 0; }
-  .kit-copy { padding-inline: var(--gut); }
-  .kit-stage { height: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 10px var(--gut) 0; --k: 1; }
+@media (max-width: 1000px) {
+  .kit-grid { grid-template-columns: 1fr; }
+  .kit-stage { height: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding-top: 10px; }
   .kit-item, .kit-pouch { position: static; transform: none; }
   .kit-item svg { width: 76px; }
-  .kit-item span { opacity: 1; white-space: normal; text-align: center; }
+  .kit-item span { white-space: normal; text-align: center; }
   .kit-pouch { display: none; }
 }
 
@@ -129,30 +88,27 @@
 .unit span { color: var(--mute); font-size: 15px; }
 @media (max-width: 860px) { .streams { grid-template-columns: 1fr; } .stream { min-height: 0; } }
 
-/* Give Her the Wings: one card per edition, stacking */
-.wing { border-radius: 30px; padding: clamp(26px, 3.4vw, 48px); display: grid; grid-template-columns: 1fr auto; gap: 24px 40px; align-items: start; min-height: 320px; background: var(--paper); color: var(--text); box-shadow: 0 -20px 50px -24px rgba(0, 0, 0, .5); }
+/* Give Her the Wings: one card per edition */
+.wings-list { display: grid; gap: 14px; margin-top: 56px; }
+.wing { border-radius: 24px; padding: clamp(26px, 3.4vw, 44px); display: grid; grid-template-columns: 1fr auto; gap: 24px 40px; align-items: start; background: var(--paper); color: var(--text); }
 .wing:nth-child(2) { background: var(--acc); color: var(--acc-ink); }
 .wing:nth-child(3) { background: #fff; }
-.wing .yr { font: 900 clamp(64px, 9vw, 140px)/.8 var(--display); font-stretch: 120%; letter-spacing: -.05em; color: var(--acc-deep); }
+.wing .yr { font: 900 clamp(56px, 7vw, 100px)/.8 var(--display); font-stretch: 116%; letter-spacing: -.05em; color: var(--acc-deep); }
 .wing:nth-child(2) .yr { color: var(--acc-ink); }
 .wing .k { font: 700 12px/1.4 var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--sea); }
 .wing:nth-child(2) .k { color: var(--acc-ink); opacity: .75; }
-.wing h3 { font-size: clamp(26px, 3vw, 40px); margin: 12px 0 14px; font-weight: 820; }
+.wing h3 { font-size: clamp(24px, 2.6vw, 34px); margin: 12px 0 14px; font-weight: 800; }
 .wing p { color: var(--mute); max-width: 58ch; }
 .wing:nth-child(2) p { color: color-mix(in srgb, var(--acc-ink) 80%, transparent); }
 .wing .nums { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 .wing .nums span { font: 700 12px/1 var(--mono); letter-spacing: .1em; padding: 9px 12px; border-radius: 99px; background: color-mix(in srgb, var(--text) 8%, transparent); }
 @media (max-width: 760px) { .wing { grid-template-columns: 1fr; min-height: 0; } .wing .yr { order: -1; font-size: 64px; } }
 
-.partners-band { background: var(--sand); padding: 30px 0; overflow: hidden; border-block: 1px solid color-mix(in srgb, var(--text) 10%, transparent); }
+.partners-band { background: var(--sand); padding: 30px var(--gut); border-block: 1px solid color-mix(in srgb, var(--text) 10%, transparent); }
 .partners-band .strip-label { color: var(--mute); }
 </style>
 </head>
 <body>
-
-<canvas id="trail" aria-hidden="true"></canvas>
-<div class="frame" aria-hidden="true"><span class="fr bl" id="frLabel">00 · INAAYAT</span></div>
-<div class="notch" id="notch" aria-hidden="true"><span class="nd"></span><span class="nt" id="notchText"></span></div>
 
 <header class="nav">
   <div class="wrap nav-in">
@@ -193,7 +149,7 @@
 <main>
 
 <!-- HERO -->
-<section class="hero" id="top" data-scene="INAAYAT" style="--hh:150%;--hp:50% 0">
+<section class="hero" id="top" style="--hh:150%;--hp:50% 0">
   <div class="hero-bg"><img src="assets/mhm-session-aug-2025.jpg" alt="Girls at a menstrual hygiene session run by Enactus HRC in Mumbai" referrerpolicy="no-referrer" fetchpriority="high"></div>
   <a class="hero-badge" href="#journey" aria-label="Top 5 at Envision 2026, IIT Roorkee">
     <small>IIT ROORKEE · 2026</small>
@@ -201,11 +157,11 @@
     <span>Envision, Mature Stage</span>
   </a>
   <div class="hero-main wrap">
-    <div class="hero-card spot">
+    <div class="hero-card">
       <span class="eyebrow">Project Inaayat · since 2018</span>
-      <h1 data-words>Periods, without <em>the silence.</em></h1>
-      <p data-reveal style="--d:500ms">We run menstrual hygiene sessions with schools and NGOs, and hand out reusable sanitary kits stitched by women from underserved communities, right at the session.</p>
-      <div class="hero-ctas" data-reveal style="--d:650ms">
+      <h1>Periods, without <em>the silence.</em></h1>
+      <p>We run menstrual hygiene sessions with schools and NGOs, and hand out reusable sanitary kits stitched by women from underserved communities, right at the session.</p>
+      <div class="hero-ctas">
         <a class="btn btn-y" href="#latest">See the 2026 campaign <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a>
         <a class="btn btn-o" href="#partner">Sponsor kits</a>
       </div>
@@ -213,49 +169,39 @@
   </div>
   <div class="strip">
     <div class="strip-label">Inaayat · Urdu for "a blessing"</div>
-    <div class="marq" aria-hidden="true">
-      <span>Days for Girls · India's first chapter</span><span>Give Her the Wings</span><span>Top 5 · Envision 2026, IIT Roorkee</span><span>National Award for Women Empowerment</span><span>Featured in Mid-day</span><span>Red Dot Foundation · 2nd of 105</span>
+    <div class="strip-list">
       <span>Days for Girls · India's first chapter</span><span>Give Her the Wings</span><span>Top 5 · Envision 2026, IIT Roorkee</span><span>National Award for Women Empowerment</span><span>Featured in Mid-day</span><span>Red Dot Foundation · 2nd of 105</span>
     </div>
   </div>
 </section>
 
 <!-- PROBLEM -->
-<section class="problem" id="problem" data-scene="THE PROBLEM" aria-label="The problem">
-  <div class="p-stick">
-    <canvas id="units" aria-hidden="true"></canvas>
-    <div class="unit-label" aria-hidden="true"><b id="unitBig">41 of 100</b><span id="unitSmall">girls, before their first period</span></div>
-    <div class="p-text">
-      <div class="wrap">
-        <div class="slides">
-          <div class="pslide on">
-            <span class="eyebrow">The problem</span>
-            <h2><span class="big">41%</span> of girls don't know about periods until they start.</h2>
-            <p>Around 41% of girls are unaware of menstruation before their first period, and limited access to hygienic products leads to unsafe practices and infections.</p>
-          </div>
-          <div class="pslide">
-            <span class="eyebrow">The waste</span>
-            <h2>Over a billion pads thrown away. <span class="big">Every month.</span></h2>
-            <p>Each one can take 500 years or more to decompose.</p>
-          </div>
-          <div class="pslide">
-            <span class="eyebrow">The idea</span>
-            <h2>Inaayat: <span class="big">a blessing.</span></h2>
-            <p>Awareness and access, together. Sessions that end the silence, and reusable kits stitched by women who earn a livelihood from them.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="p-prog" aria-hidden="true"><i></i><i></i><i></i></div>
+<section class="sec dark" id="problem" aria-label="The problem">
+  <div class="wrap p-grid">
+    <article class="p-card" data-reveal>
+      <span class="eyebrow">The problem</span>
+      <h2><span class="big">41%</span> of girls don't know about periods until they start.</h2>
+      <p>Around 41% of girls are unaware of menstruation before their first period, and limited access to hygienic products leads to unsafe practices and infections.</p>
+    </article>
+    <article class="p-card" data-reveal style="--d:100ms">
+      <span class="eyebrow">The waste</span>
+      <h2>Over a billion pads thrown away. <span class="big">Every month.</span></h2>
+      <p>Each one can take 500 years or more to decompose.</p>
+    </article>
+    <article class="p-card" data-reveal style="--d:200ms">
+      <span class="eyebrow">The idea</span>
+      <h2>Inaayat: <span class="big">a blessing.</span></h2>
+      <p>Awareness and access, together. Sessions that end the silence, and reusable kits stitched by women who earn a livelihood from them.</p>
+    </article>
   </div>
 </section>
 
 <!-- LATEST 2026 -->
-<section class="sec latest" id="latest" data-scene="LATEST · 2026">
+<section class="sec latest" id="latest">
   <div class="wrap latest-grid">
     <div class="sec-head">
       <span class="tag-new">NEW · OCTOBER 2026</span>
-      <h2 data-words>Give Her the Wings is back in the villages.</h2>
+      <h2>Give Her the Wings is back in the villages.</h2>
       <p class="lede" data-reveal>Our flagship campaign went out again this October: menstrual hygiene sessions for girls and women, and reusable kits handed over at the session itself. It's more than a campaign. Watch it for yourself.</p>
     </div>
     <div class="reels">
@@ -277,73 +223,67 @@
 </section>
 
 <!-- STATS -->
-<section class="stats" id="impact" data-scene="IMPACT">
+<section class="stats" id="impact">
   <div class="wrap">
     <div class="stats-head">
-      <h2 data-words>Eight years of breaking the silence.</h2>
-      <p data-reveal>From one project in 2018 to sessions across Mumbai, Palghar and beyond.</p>
+      <h2>Eight years of breaking the silence.</h2>
+      <p>From one project in 2018 to sessions across Mumbai, Palghar and beyond.</p>
     </div>
     <div class="stat-grid">
-      <div class="stat spot" data-reveal><div class="big"><span class="odo" data-to="80000"></span><small>+</small></div><h4>Lives impacted</h4><p>Through sessions and kits since 2018.</p></div>
-      <div class="stat spot" data-reveal style="--d:90ms"><div class="big"><span class="odo" data-to="2600"></span></div><h4>Kits in one order</h4><p>Made for Bindu in 2021, for North and Central India.</p></div>
-      <div class="stat spot" data-reveal style="--d:180ms"><div class="big"><span class="odo" data-to="1000"></span></div><h4>Kits per campaign</h4><p>Handed out in each of Give Her the Wings 2024 and 3.0.</p></div>
-      <div class="stat spot" data-reveal style="--d:270ms"><div class="big"><span class="odo" data-to="1200"></span></div><h4>Reusable pads, Nagpur</h4><p>Donated at a tribal police camp in 2025.</p></div>
+      <div class="stat" data-reveal><div class="big"><span class="count" data-to="80000">80,000</span><small>+</small></div><h4>Lives impacted</h4><p>Through sessions and kits since 2018.</p></div>
+      <div class="stat" data-reveal style="--d:90ms"><div class="big"><span class="count" data-to="2600">2,600</span></div><h4>Kits in one order</h4><p>Made for Bindu in 2021, for North and Central India.</p></div>
+      <div class="stat" data-reveal style="--d:180ms"><div class="big"><span class="count" data-to="1000">1,000</span></div><h4>Kits per campaign</h4><p>Handed out in each of Give Her the Wings 2024 and 3.0.</p></div>
+      <div class="stat" data-reveal style="--d:270ms"><div class="big"><span class="count" data-to="1200">1,200</span></div><h4>Reusable pads, Nagpur</h4><p>Donated at a tribal police camp in 2025.</p></div>
     </div>
   </div>
 </section>
 
 <!-- LET'S TALK PERIOD -->
-<section class="kin" id="talk" data-scene="LET'S TALK PERIOD" aria-label="Let's talk period" style="--kcol:var(--paper)">
-  <div class="kin-stick" aria-hidden="true">
-    <span class="kin-cap">Our series, since 2020</span>
-    <div class="kin-word" data-bg="#ff5a7e" data-fg="#2a0610">LET'S</div>
-    <div class="kin-word glitch" data-bg="#2a1222" data-fg="#ffffff"><span class="g-base">TALK</span><span class="g-s" style="--s:0">TALK</span><span class="g-s" style="--s:1">TALK</span><span class="g-s" style="--s:2">TALK</span><span class="g-s" style="--s:3">TALK</span><span class="g-s" style="--s:4">TALK</span><span class="smear"></span></div>
-    <div class="kin-word" data-bg="#ffc21a" data-fg="#2a1222">PERIOD.</div>
-    <div class="kin-word" data-bg="#1b0b16" data-fg="#ff5a7e">NO SHAME.</div>
-    <div class="kin-cols"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<section class="band" id="talk" aria-label="Let's talk period">
+  <div class="wrap">
+    <span class="eyebrow">Our series, since 2020</span>
+    <h2>Let's talk period. No shame.</h2>
   </div>
-  <h2 class="kin-static">Let's talk period. No shame.</h2>
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="hscroll inky" id="how" data-scene="HOW IT WORKS">
-  <div class="hs-stick">
-    <div class="how-head sec-head">
+<section class="sec inky" id="how">
+  <div class="wrap">
+    <div class="sec-head">
       <span class="eyebrow">How it works</span>
-      <h2 data-words>Two halves of one project.</h2>
+      <h2>Two halves of one project.</h2>
     </div>
-    <div class="htrack">
-      <article class="step-card">
+    <div class="step-grid">
+      <article class="step-card" data-reveal>
         <div class="media art"><svg viewBox="0 0 140 110" fill="none" stroke="#ff5a7e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 90 60 30l20 30"/><circle cx="96" cy="30" r="12"/><path d="M84 90V62c0-8 6-14 12-14s12 6 12 14v28"/><path d="M10 96h120" stroke="#ffc21a"/><path d="M58 30c10-12 26-12 34 0" stroke-dasharray="4 6"/></svg></div>
         <div class="body"><span class="n">01 · STITCH</span><h3>Made by women, for women</h3><p>Reusable sanitary kits are stitched by women from underserved communities, so every kit is also a livelihood.</p></div>
       </article>
-      <article class="step-card">
+      <article class="step-card" data-reveal>
         <div class="media"><img src="assets/mhm-women-session.jpg" alt="Enactus volunteers with women at a menstrual hygiene session" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="body"><span class="n">02 · PARTNER</span><h3>Schools and NGOs</h3><p>We work with schools and NGOs who know the community, from Mumbai's municipal schools to villages in Palghar.</p></div>
       </article>
-      <article class="step-card">
+      <article class="step-card" data-reveal>
         <div class="media"><img src="assets/mhm-hands-up.jpg" alt="Students raising their hands at a session" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="body"><span class="n">03 · TALK</span><h3>The session</h3><p>A menstrual hygiene session: the biology, hygiene practices, myths against facts, and a space to ask anything.</p></div>
       </article>
-      <article class="step-card">
+      <article class="step-card" data-reveal>
         <div class="media"><img src="assets/mhm-smiles.jpg" alt="Girls smiling after a session" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="body"><span class="n">04 · HAND OVER</span><h3>Kits at the session</h3><p>Kits are given out at the session itself, with a picture guide on how to use and care for them.</p></div>
       </article>
-      <article class="step-card">
+      <article class="step-card" data-reveal>
         <div class="media art"><svg viewBox="0 0 140 110" fill="none" stroke="#ffc21a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="70" cy="55" r="34"/><path d="M70 21v68M52 40h28a10 10 0 0 1 0 20H58" stroke="#ff5a7e"/><path d="M60 60l18 18"/></svg></div>
         <div class="body"><span class="n">05 · FUND</span><h3>Orders pay for reach</h3><p>Paying orders fund production, while partnerships carry the kits to communities where access is hardest.</p></div>
       </article>
     </div>
-    <div class="hs-bar" aria-hidden="true"><i></i></div>
   </div>
 </section>
 
 <!-- THE KIT -->
-<section class="kit" id="kit" data-scene="THE KIT">
-  <div class="kit-stick">
+<section class="sec kit" id="kit">
+  <div class="wrap kit-grid">
     <div class="kit-copy">
       <span class="eyebrow">What's in the kit</span>
-      <h2 data-words>Everything she needs, in one pouch.</h2>
+      <h2>Everything she needs, in one pouch.</h2>
       <p class="lede" data-reveal>The original Inaayat kit, made with Days for Girls: two shields, eight absorbent liners, a menstrual chart, a pictorial guide and two soaps.</p>
       <p class="kit-note" data-reveal>Kits change with the community. For Give Her the Wings 3.0 each kit held three reusable pads, an instruction chart in Marathi and a bar of soap.</p>
     </div>
@@ -359,17 +299,17 @@
 </section>
 
 <!-- BUSINESS MODEL -->
-<section class="sec" id="model" data-scene="BUSINESS MODEL">
+<section class="sec" id="model">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Business model</span>
-      <h2 data-words>Three ways a kit reaches someone.</h2>
-      <p class="lede" data-reveal>Paying orders fund production, while partnerships carry our reach to communities where access is hardest.</p>
+      <h2>Three ways a kit reaches someone.</h2>
+      <p class="lede">Paying orders fund production, while partnerships carry our reach to communities where access is hardest.</p>
     </div>
     <div class="streams">
-      <article class="stream spot" data-reveal><span class="k">01 · COMMUNITY</span><h3>Distribution with NGOs</h3><p>Kits go out through NGO partners, at sessions, to the people who need them most.</p></article>
-      <article class="stream spot" data-reveal style="--d:120ms"><span class="k">02 · B2B</span><h3>Corporates and institutions</h3><p>Partnerships and bulk orders, like the ₹4.15 lakh order for 2,600 kits from Bindu in 2021.</p></article>
-      <article class="stream spot" data-reveal style="--d:240ms"><span class="k">03 · D2C</span><h3>Direct to you</h3><p>Anyone can buy a kit, and every sale keeps the production centre stitching.</p></article>
+      <article class="stream" data-reveal><span class="k">01 · COMMUNITY</span><h3>Distribution with NGOs</h3><p>Kits go out through NGO partners, at sessions, to the people who need them most.</p></article>
+      <article class="stream" data-reveal style="--d:120ms"><span class="k">02 · B2B</span><h3>Corporates and institutions</h3><p>Partnerships and bulk orders, like the ₹4.15 lakh order for 2,600 kits from Bindu in 2021.</p></article>
+      <article class="stream" data-reveal style="--d:240ms"><span class="k">03 · D2C</span><h3>Direct to you</h3><p>Anyone can buy a kit, and every sale keeps the production centre stitching.</p></article>
     </div>
     <div class="unit" data-reveal>
       <div><b>≈ ₹170</b><span>to make one kit</span></div>
@@ -378,15 +318,15 @@
 </section>
 
 <!-- GIVE HER THE WINGS -->
-<section class="sec inky" id="wings" data-scene="GIVE HER THE WINGS">
+<section class="sec inky" id="wings">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Our flagship campaign</span>
-      <h2 data-words>Give Her the Wings.</h2>
+      <h2>Give Her the Wings.</h2>
       <p class="lede" data-reveal>Once a year we raise funds, prepare a thousand kits and take sessions to villages where most women have never had a reusable option.</p>
     </div>
-    <div class="stack" style="margin-top:56px">
-      <article class="wing stack-card" style="--i:0">
+    <div class="wings-list">
+      <article class="wing" data-reveal>
         <div>
           <span class="k">September 2024 · Charoti, Dahanu</span>
           <h3>Where 80% had no proper facilities</h3>
@@ -395,7 +335,7 @@
         </div>
         <span class="yr">1,000</span>
       </article>
-      <article class="wing stack-card" style="--i:1">
+      <article class="wing" data-reveal>
         <div>
           <span class="k">22 September 2025 · GHTW 3.0 · Palghar</span>
           <h3>Twenty days, three villages</h3>
@@ -404,7 +344,7 @@
         </div>
         <span class="yr">3.0</span>
       </article>
-      <article class="wing stack-card" style="--i:2">
+      <article class="wing" data-reveal>
         <div>
           <span class="k">October 2026 · the latest edition</span>
           <h3>Back again, with a whole lot of heart</h3>
@@ -420,22 +360,19 @@
 <!-- PARTNERS -->
 <div class="partners-band" aria-label="Partners">
   <div class="strip-label">Sessions and kits with</div>
-  <div class="marq dark-text" aria-hidden="true">
-    <span>Days for Girls</span><span>Bindu</span><span>Rainbow Foundation</span><span>Alambana Foundation</span><span>Tap2Smile</span><span>Connect For</span><span>Bhumi</span><span>Pahile Majhe Kartavya Foundation</span><span>The 1% Club</span><span>Think India HRC</span><span>Help and Feed India</span><span>The Period Society</span>
+  <div class="strip-list dark-text">
     <span>Days for Girls</span><span>Bindu</span><span>Rainbow Foundation</span><span>Alambana Foundation</span><span>Tap2Smile</span><span>Connect For</span><span>Bhumi</span><span>Pahile Majhe Kartavya Foundation</span><span>The 1% Club</span><span>Think India HRC</span><span>Help and Feed India</span><span>The Period Society</span>
   </div>
-  <p class="sr-only">Partners include Days for Girls, Bindu, Rainbow Foundation, Alambana Foundation, Tap2Smile, Connect For, Bhumi, Pahile Majhe Kartavya Foundation, The 1% Club, Think India HRC, Help and Feed India and The Period Society.</p>
 </div>
 
 <!-- JOURNEY -->
-<section class="sec sand" id="journey" data-scene="JOURNEY">
+<section class="sec sand" id="journey">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Our journey</span>
-      <h2 data-words>From one idea in 2018 to a national stage.</h2>
+      <h2>From one idea in 2018 to a national stage.</h2>
     </div>
     <ol class="tl">
-      <span class="tl-fill" aria-hidden="true"></span>
       <li data-reveal><time>Apr 2018</time><div><h3>Inaayat begins</h3><p>Launched as India's first chapter under Days for Girls International, to make reusable menstrual hygiene kits and run awareness sessions.</p></div></li>
       <li data-reveal><time>2019</time><div><h3>On the national stage</h3><p>The Inaayat menstrual hygiene campaign, and Inaayat presented at Enactus India Nationals 2019 alongside Aajeevika.</p></div></li>
       <li data-reveal><time>2020</time><div><h3>Let's talk period</h3><p>Periodicals, an IGTV series on menstrual health, and Period Party, a month of webinars with founders and menstrual coaches.</p></div></li>
@@ -453,11 +390,11 @@
 </section>
 
 <!-- GALLERY + VIDEOS -->
-<section class="sec dark" id="gallery" data-scene="GALLERY">
+<section class="sec dark" id="gallery">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">In action</span>
-      <h2 data-words>Sessions, smiles and kits.</h2>
+      <h2>Sessions, smiles and kits.</h2>
       <p class="lede" data-reveal>Tap any photo to see it bigger.</p>
     </div>
     <div class="gal" id="gal"></div>
@@ -472,29 +409,29 @@
 </dialog>
 
 <!-- WHAT WE BELIEVE -->
-<section class="sec inky" id="belief" data-scene="WHAT WE BELIEVE">
+<section class="sec inky" id="belief">
   <div class="wrap">
     <blockquote>
-      <p class="statement fill-words">At Project Inaayat, we believe menstrual care should be built on knowledge, access and dignity.</p>
+      <p class="statement" data-reveal>At Project Inaayat, we believe menstrual care should be built on knowledge, access and dignity.</p>
       <cite class="statement-cite">Team Inaayat · Enactus HRC</cite>
     </blockquote>
   </div>
 </section>
 
 <!-- SPONSOR -->
-<section class="sec partner on-photo" id="partner" data-scene="SPONSOR KITS">
+<section class="sec partner on-photo" id="partner">
   <div class="partner-bg"><img src="assets/ghtw-3-team.jpg" alt="" referrerpolicy="no-referrer" loading="lazy"></div>
   <div class="wrap partner-grid">
     <div>
       <span class="eyebrow">Sponsor kits</span>
-      <h2 data-words>Give her the wings.</h2>
-      <p class="lede" data-reveal>Fund kits for the next campaign, order them for your institution, or partner with us for sessions. Every kit is also a day's work for the women who stitch it.</p>
-      <div class="ctas" data-reveal style="--d:150ms">
+      <h2>Give her the wings.</h2>
+      <p class="lede">Fund kits for the next campaign, order them for your institution, or partner with us for sessions. Every kit is also a day's work for the women who stitch it.</p>
+      <div class="ctas">
         <a class="btn btn-y" href="https://ig.me/m/projectinaayat" target="_blank" rel="noopener">Text @projectinaayat on Instagram</a>
         <a class="btn btn-o" href="https://www.instagram.com/projectinaayat/" target="_blank" rel="noopener">Follow on Instagram</a>
       </div>
     </div>
-    <form class="calc spot" data-reveal onsubmit="return false">
+    <form class="calc" data-reveal onsubmit="return false">
       <label for="kits">How many kits?</label>
       <output id="kOut" for="kits">500<small>kits</small></output>
       <input type="range" id="kits" min="50" max="2000" step="50" value="500">
@@ -516,16 +453,11 @@
           <span class="chip-logo hrc"><img src="assets/hr-college-logo.png" alt="H.R. College of Commerce &amp; Economics" loading="lazy"></span>
         </div>
         <div class="endcard">
-          <div class="ec-stage" aria-label="Inaayat">
-            <span class="ec-ring" style="--s:220px;--dl:0ms"></span><span class="ec-ring" style="--s:150px;--dl:130ms"></span><span class="ec-ring" style="--s:84px;--dl:260ms"></span>
-            <span class="ec-dot"></span>
-            <div class="ec-word">INAAYAT<span>.</span></div>
-          </div>
-          <svg class="ec-wave" viewBox="0 0 600 30" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 15 C 50 0, 100 0, 150 15 S 250 30, 300 15 S 400 0, 450 15 S 550 30, 600 15"/></svg>
-          <p class="ec-line" data-type="Knowledge, access and dignity."></p>
+          <div class="ec-word">INAAYAT<span>.</span></div>
+          <p class="ec-line">Knowledge, access and dignity.</p>
         </div>
         <p class="about">Project Inaayat is an initiative of Enactus H.R. College, the Enactus chapter of H.R. College of Commerce &amp; Economics, Mumbai.</p>
-        <button class="copy" type="button"><span class="copy-fill"></span><span class="copy-t">Copy page link</span></button>
+        <button class="copy" type="button"><span class="copy-t">Copy page link</span></button>
       </div>
       <div>
         <h4>Enactus HRC</h4>
@@ -555,86 +487,10 @@
     { src: 'assets/kits-distribution-2021.jpg', cap: 'Menstrual hygiene kits on their way, 2021', c: 6, r: 3 }
   ];
 </script>
-<script src="assets/enactus.js?v=5"></script>
+<script src="assets/enactus.js?v=6"></script>
 <script>
 (() => {
-  const { $, $$, reduce, clamp, lerp, inOut, onScroll, whenVisible, fit, progress, inr } = window.EN;
-
-  /* ── problem: 100 girls (41 light up), the pads pile up, then the dots become a heart ── */
-  (() => {
-    const sec = $('#problem'), cv = $('#units'), ctx = cv.getContext('2d');
-    const slides = $$('.pslide', sec), bars = $$('.p-prog i', sec), label = $('.unit-label', sec);
-    const big = $('#unitBig'), small = $('#unitSmall');
-    if (reduce) { sec.classList.add('static'); return; }
-    const N = 100;
-    let W = 0, H = 0, dpr = 1, live = false, stage = -1, grid = [], pile = [], heart = [];
-    const jitter = Array.from({ length: N }, () => [Math.random() - .5, Math.random() - .5, Math.random() * Math.PI]);
-    const layout = () => {
-      ({ W, H, dpr } = fit(cv));
-      const wide = W > 1000;
-      const cx = wide ? W * .72 : W * .5, cy = wide ? H * .48 : H * .66;
-      const S = wide ? Math.min(W * .3, H * .6) : Math.min(W * .8, H * .36);
-      const step = S / 10;
-      grid = Array.from({ length: N }, (_, i) => [cx - S / 2 + step * (i % 10 + .5), cy - S / 2 + step * (Math.floor(i / 10) + .5)]);
-      // a heap at the bottom: rows of 19, 17, 15 … 1 hold exactly 100
-      pile = []; let row = 0, left = N;
-      while (left > 0) {
-        const n = Math.min(left, Math.max(1, 19 - row * 2)), w = n * step * .62;
-        for (let k = 0; k < n; k++) pile.push([cx - w / 2 + (k + .5) * (w / n) + jitter[pile.length][0] * 6, cy + S / 2 - row * step * .42 + jitter[pile.length][1] * 4]);
-        left -= n; row++;
-      }
-      heart = Array.from({ length: N }, (_, i) => {
-        const t = i / N * Math.PI * 2;
-        const x = 16 * Math.sin(t) ** 3, y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-        return [cx + x * S / 36, cy + y * S / 36 - step * .4];
-      });
-      sec.style.setProperty('--ux', (cx / W * 100) + '%');
-      sec.style.setProperty('--uy', ((cy + S / 2 + step * (wide ? .9 : .6)) / H * 100) + '%');
-      return step;
-    };
-    let step = 0;
-    const frame = now => {
-      if (!live) return;
-      const p = progress(sec);
-      const lit = Math.round(41 * clamp((p - .04) / .2));      // stage 1: 41 dots light up
-      const toPile = inOut(clamp((p - .34) / .16));             // stage 2: they fall into a heap
-      const toHeart = inOut(clamp((p - .66) / .16));            // stage 3: they rise into a heart
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.clearRect(0, 0, W, H);
-      for (let i = 0; i < N; i++) {
-        const a = grid[i], b = pile[i], c = heart[i];
-        let x = lerp(a[0], b[0], toPile), y = lerp(a[1], b[1], toPile);
-        x = lerp(x, c[0], toHeart); y = lerp(y, c[1], toHeart);
-        y += Math.sin(now * .002 + i) * 1.2 * (1 - toPile + toHeart);
-        const r = step * .26;
-        // in the heap a dot stretches into a pad shape
-        const stretch = toPile * (1 - toHeart);
-        ctx.beginPath();
-        ctx.ellipse(x, y, r * (1 + stretch * 1.1), r * (1 - stretch * .45), jitter[i][2] * stretch, 0, Math.PI * 2);
-        ctx.fillStyle = toHeart > .5 ? (i % 3 ? '#ff5a7e' : '#ffc21a') : stretch > .5 ? '#8f6d7f' : i < lit ? '#ff5a7e' : 'rgba(255,255,255,.22)';
-        ctx.fill();
-      }
-      const s = p < .3 ? 0 : p < .62 ? 1 : 2;
-      if (s !== stage) {
-        stage = s;
-        slides.forEach((el, i) => el.classList.toggle('on', i === s));
-        big.textContent = ['41 of 100', '500+ years', 'Inaayat'][s];
-        small.textContent = ['girls, before their first period', 'for one pad to break down', 'means a blessing'][s];
-      }
-      bars.forEach((b, i) => b.style.setProperty('--f', clamp((p - i / 3) * 3).toFixed(3)));
-      requestAnimationFrame(frame);
-    };
-    step = layout();
-    addEventListener('resize', () => { step = layout(); });
-    whenVisible(sec, () => { if (!live) { live = true; requestAnimationFrame(frame); } }, () => { live = false; });
-  })();
-
-  /* ── the kit comes apart as you scroll through it ── */
-  (() => {
-    const sec = $('#kit'), stage = $('#kitStage');
-    if (reduce || !matchMedia('(min-width: 901px)').matches) { stage.style.setProperty('--k', 1); return; }
-    onScroll(() => stage.style.setProperty('--k', inOut(clamp((progress(sec) - .08) / .55)).toFixed(3)));
-  })();
+  const { $, inr } = window.EN;
 
   /* ── sponsor calculator: about ₹170 a kit ── */
   (() => {

@@ -1,15 +1,17 @@
 # Enactus H.R. College website: notes for Claude
 
 Static site on GitHub Pages, served from `main`: https://vanshpurohit10.github.io/enactus-hrc/
-`index.html` (home), `inaayat.html`, `sanchay.html`, shared `assets/enactus.css` and `assets/enactus.js`.
-Each page also has inline styles and scripts; `sanchay.html` carries its own full script.
+`index.html` (home), `inaayat.html`, `sanchay.html`, all three on the shared `assets/enactus.css` and `assets/enactus.js`.
+Each page adds its own palette and page-specific styles inline; the only inline scripts are the gallery list and the calculators.
 `video/` is a Remotion project for the two promo videos (see `video/README.md`).
 
 ## Working here
 - Work on a branch and merge with a pull request; the live site updates about a minute after a merge to `main`.
 - Claude must be connected to GitHub as `vanshpurohit10` (the repo owner). Another account can read but gets 403 on push.
-- Check pages at phone (390 px) and desktop widths after edits. Removing a section means removing its script too:
-  Sanchay's scene labels (`NAMES` in its script) list section ids, and the home globe code needed its canvas.
+- Check pages at phone (390 px) and desktop widths after edits.
+- The team asked for a calmer, more professional site like enactussrcc.org (Nov 2026). Keep motion to the two shared effects:
+  `data-reveal` (fade in once) and `.count` (count up once). No intros, pinned scroll scenes, marquees, cursor effects or parallax.
+  Bump the `?v=` on the CSS/JS links when changing the shared files.
 
 ## Done (Oct–Nov 2026)
 - Teacher-in-Charge is Darshit Shah.
@@ -21,6 +23,10 @@ Each page also has inline styles and scripts; `sanchay.html` carries its own ful
   2026 campaign; videos right after "Watch it for yourself"; gallery Instagram embeds removed; only the ₹170 kit cost
   (calculator = kits × ₹170); "What's next" removed on both project pages (closing quotes kept); Sanchay drifting particles,
   "Our approach", the QR block and "Next 12 months" removed; message buttons say "on Instagram".
+- Calmer design (5 Nov 2026): intro, cursor line, scene labels, marquees, glitch/kinetic type, pinned scenes, stacking cards,
+  horizontal scroll, parallax and canvases removed; those sections are now plain grids and bands with the same copy.
+  Presidents are a two-row list with their full posters. Sanchay's batch record shows its finished state, and its
+  traceability grid's missing closing tag was fixed. The videos still show the old animated site.
 
 ## Waiting on the team
 1. Villages lit (297) is unverified: the Chirag NGO now claims 500+ to 863 villages and says Chirag began in 2010 (site says 2009).
