@@ -24,23 +24,6 @@
 /* the home page keeps Enactus's own black and yellow; each project brings its colour */
 :root { --acc2: #ff5a7e; }
 
-/* what Enactus means */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
-.globe-wrap { position: relative; aspect-ratio: 1; width: 100%; max-width: 560px; justify-self: center; }
-#globe { position: absolute; inset: 0; width: 100%; height: 100%; }
-.globe-tag { position: absolute; left: 50%; bottom: 4%; transform: translateX(-50%); text-align: center; font: 700 11px/1.5 var(--mono); letter-spacing: .18em; color: var(--mute); text-transform: uppercase; white-space: nowrap; }
-.globe-tag b { display: block; font: 860 clamp(30px, 3.4vw, 46px)/1 var(--display); letter-spacing: -.02em; color: var(--text); text-transform: none; }
-.eau { display: grid; gap: 1px; background: color-mix(in srgb, var(--text) 12%, transparent); border-radius: 22px; overflow: hidden; margin-top: 32px; }
-.eau div { background: #fff; padding: 20px 22px; display: grid; grid-template-columns: 74px 1fr; gap: 16px; align-items: baseline; }
-.eau b { font: 900 34px/1 var(--display); font-stretch: 120%; letter-spacing: -.03em; }
-.eau b i { font-style: normal; color: var(--acc-deep); }
-.eau p { color: var(--mute); font-size: 16px; }
-.eau p strong { color: var(--text); }
-.tbl { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-.tbl span { font: 700 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; padding: 10px 14px; border-radius: 99px; background: var(--ink); color: #fff; }
-.tbl span:nth-child(1) { background: var(--acc); color: var(--acc-ink); }
-@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } .globe-wrap { max-width: 420px; } }
-
 /* how a chapter works */
 .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 56px; counter-reset: f; }
 .flow article { position: relative; border-radius: 24px; padding: 26px; background: #fff; display: grid; gap: 12px; align-content: start; box-shadow: 0 1px 0 rgba(0, 0, 0, .06), 0 18px 40px -26px rgba(0, 0, 0, .3); }
@@ -234,7 +217,7 @@
     <div class="hero-card spot">
       <span class="eyebrow">Enactus H.R. College · Mumbai</span>
       <h1 data-words>At Enactus, <em>you</em> be the change.</h1>
-      <p data-reveal style="--d:500ms">We're the Enactus chapter of H.R. College of Commerce &amp; Economics. Since 2009, our students have built small, sustainable businesses with communities, so the change keeps going after we leave.</p>
+      <p data-reveal style="--d:500ms">Enactus is a global network of students, academics and business leaders who use business to create social and environmental impact. At H.R. College of Commerce &amp; Economics, we've built sustainable businesses with communities since 2009, so the change keeps going after we leave.</p>
       <div class="hero-ctas" data-reveal style="--d:650ms">
         <a class="btn btn-y" href="#projects">See our projects <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a>
         <a class="btn btn-o" href="#join">Join Enactus</a>
@@ -244,10 +227,10 @@
   <div class="strip">
     <div class="strip-label">Recognised at</div>
     <div class="marq" aria-hidden="true">
-      <span>Enactus World Cup 2012</span><span>Enactus India Nationals</span><span>National Award for Women Empowerment</span><span>E-Summit · IIT Roorkee</span><span>TISS Social Business Idea Competition</span><span>Red Dot Foundation</span><span>Featured in Mid-day</span><span>Recognised by NMMC</span>
-      <span>Enactus World Cup 2012</span><span>Enactus India Nationals</span><span>National Award for Women Empowerment</span><span>E-Summit · IIT Roorkee</span><span>TISS Social Business Idea Competition</span><span>Red Dot Foundation</span><span>Featured in Mid-day</span><span>Recognised by NMMC</span>
+      <span>Enactus World Cup 2012</span><span>National Award for Women Empowerment</span><span>E-Summit · IIT Roorkee</span><span>TISS Social Business Idea Competition</span><span>Red Dot Foundation</span><span>Featured in Mid-day</span><span>Recognised by NMMC</span>
+      <span>Enactus World Cup 2012</span><span>National Award for Women Empowerment</span><span>E-Summit · IIT Roorkee</span><span>TISS Social Business Idea Competition</span><span>Red Dot Foundation</span><span>Featured in Mid-day</span><span>Recognised by NMMC</span>
     </div>
-    <p class="sr-only">Recognised at the Enactus World Cup 2012, Enactus India Nationals, Bhavishya Bharat National Award, E-Summit IIT Roorkee, TISS, Red Dot Foundation, featured in Mid-day and recognised by NMMC.</p>
+    <p class="sr-only">Recognised at the Enactus World Cup 2012, Bhavishya Bharat National Award, E-Summit IIT Roorkee, TISS, Red Dot Foundation, featured in Mid-day and recognised by NMMC.</p>
   </div>
 </section>
 
@@ -260,8 +243,8 @@
     </div>
     <div class="stat-grid">
       <div class="stat spot" data-reveal><div class="big"><span class="odo" data-to="17"></span><small>years</small></div><h4>Of projects</h4><p>Since Project Chirag in 2009.</p></div>
-      <div class="stat spot" data-reveal style="--d:90ms"><div class="big"><span class="odo" data-to="50000"></span><small>+</small></div><h4>Lives impacted</h4><p>By Project Inaayat since 2018.</p></div>
-      <div class="stat spot" data-reveal style="--d:180ms"><div class="big"><span class="odo" data-to="7000"></span><small>kg</small></div><h4>Ocean plastic recovered</h4><p>By Project Sanchay from Mumbai's coast.</p></div>
+      <div class="stat spot" data-reveal style="--d:90ms"><div class="big"><span class="odo" data-to="80000"></span><small>+</small></div><h4>Lives impacted</h4><p>By Project Inaayat since 2018.</p></div>
+      <div class="stat spot" data-reveal style="--d:180ms"><div class="big"><span class="odo" data-to="7000"></span><small>kg</small></div><h4>Ocean waste recovered</h4><p>By Project Sanchay from Mumbai's coast.</p></div>
       <div class="stat spot" data-reveal style="--d:270ms"><div class="big"><span class="odo" data-to="297"></span></div><h4>Villages lit</h4><p>By the solar lamps of Project Chirag.</p></div>
     </div>
   </div>
@@ -280,29 +263,10 @@
   <h2 class="kin-static">Entrepreneurial. Action. Us. Enactus.</h2>
 </section>
 
-<!-- ABOUT ENACTUS -->
+<!-- WHAT WE BELIEVE -->
 <section class="sec" id="about" data-scene="ABOUT ENACTUS">
-  <div class="wrap about-grid">
-    <div>
-      <div class="sec-head">
-        <span class="eyebrow">What is Enactus?</span>
-        <h2 data-words>One of 1,600+ chapters worldwide.</h2>
-        <p class="lede" data-reveal>Enactus, formerly Students in Free Enterprise, is a community of student, academic and business leaders using entrepreneurial action to transform lives and shape a better, more sustainable world.</p>
-      </div>
-      <div class="eau" data-reveal>
-        <div><b><i>EN</i></b><p><strong>Entrepreneurial:</strong> igniting business innovation with integrity and passion.</p></div>
-        <div><b><i>ACT</i></b><p><strong>Action:</strong> the experience of social impact that sparks social enterprise.</p></div>
-        <div><b><i>US</i></b><p><strong>Us:</strong> student, academic and business leaders collaborating to create a better world.</p></div>
-      </div>
-      <div class="tbl" data-reveal><span>Triple bottom line</span><span>Economic</span><span>Social</span><span>Environmental</span></div>
-    </div>
-    <div class="globe-wrap" data-reveal>
-      <canvas id="globe" aria-hidden="true"></canvas>
-      <div class="globe-tag"><b>Mumbai</b>Enactus H.R. College</div>
-    </div>
-  </div>
-  <div class="wrap" style="margin-top:clamp(80px,10vw,140px)">
-    <p class="statement fill-words">We believe in investing in students who take entrepreneurial action for others, to create a better world for us all.</p>
+  <div class="wrap">
+    <p class="statement fill-words">We believe in engaging students who take entrepreneurial action for others, to create a better world for us all.</p>
   </div>
 </section>
 
@@ -322,7 +286,7 @@
     </div>
     <div class="guides">
       <div class="guide" data-reveal><small>Guided by</small><b>Dr. Pooja Ramchandani, Principal, and Darshit Shah, Teacher-in-Charge</b><p>H.R. College of Commerce &amp; Economics, Mumbai.</p></div>
-      <div class="guide" data-reveal style="--d:120ms"><small>Run by students</small><b>Teams that run it like a company</b><div class="depts"><span>Operations</span><span>Business Development</span><span>Finance</span><span>Events</span></div></div>
+      <div class="guide" data-reveal style="--d:120ms"><small>Run by students</small><b>Teams that run it like a company</b><div class="depts"><span>Operations</span><span>Business Development</span><span>Finance</span><span>Events</span><span>Social Media</span></div></div>
     </div>
   </div>
 </section>
@@ -366,22 +330,22 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Our projects</span>
-      <h2 data-words>Two projects. Real change, on the ground.</h2>
-      <p class="lede" data-reveal>Scroll through them, then open either one for the whole story.</p>
+      <h2 data-words>Real change, on the ground.</h2>
+      <p class="lede" data-reveal>Scroll through them, then open each one for the whole story.</p>
     </div>
     <div class="projs">
       <article class="proj" data-reveal style="--pc-bg:#2a1222;--pc-fg:#fff;--pc-acc:#ff5a7e;--pc-ink:#2a0610">
         <div class="proj-copy">
           <div>
-            <span class="k">Project 01 · since 2018 · menstrual health</span>
+            <span class="k">Since 2018 · menstrual health</span>
             <h3>Inaayat<span>.</span></h3>
             <p>Menstrual hygiene sessions with schools and NGOs, and reusable sanitary kits stitched by women from underserved communities. India's first chapter under Days for Girls.</p>
             <a class="go" href="inaayat.html">Explore Inaayat <span aria-hidden="true">→</span></a>
           </div>
           <div class="proj-stats">
-            <div><b>50,000+</b><span>lives impacted</span></div>
+            <div><b>80,000+</b><span>lives impacted</span></div>
             <div><b>1,000</b><span>kits each Give Her the Wings</span></div>
-            <div><b>Top 4</b><span>Envision 2026, IIT Roorkee</span></div>
+            <div><b>Top 5</b><span>Envision 2026, IIT Roorkee</span></div>
           </div>
         </div>
         <div class="proj-media"><span class="chip">New · GHTW 2026</span><img src="assets/mhm-session-aug-2025.jpg" alt="A menstrual hygiene session run by Project Inaayat" referrerpolicy="no-referrer" loading="lazy" style="inset:auto 0;top:-2%;height:162%;object-position:50% 0"></div>
@@ -389,18 +353,18 @@
       <article class="proj" data-reveal style="--pc-bg:#0b2236;--pc-fg:#fff;--pc-acc:#ffc21a;--pc-ink:#1a1400">
         <div class="proj-copy">
           <div>
-            <span class="k">Project 02 · since 2025 · ocean plastic</span>
+            <span class="k">Since 2025 · ocean waste</span>
             <h3>Sanchay<span>.</span></h3>
             <p>We recover plastic from Mumbai's coastline, send it for recycling, and create paid work for women waste-pickers. Plastic credits keep it going.</p>
             <a class="go" href="sanchay.html">Explore Sanchay <span aria-hidden="true">→</span></a>
           </div>
           <div class="proj-stats">
-            <div><b>7,000 kg</b><span>ocean plastic recovered</span></div>
+            <div><b>7,000 kg</b><span>ocean waste recovered</span></div>
             <div><b>₹1.6 lakh</b><span>revenue from credits and scrap</span></div>
             <div><b>Top 20</b><span>Enactus India Nationals 2025</span></div>
           </div>
         </div>
-        <div class="proj-media"><span class="chip">80,000 kg goal</span><img src="assets/shoreline-mahim.jpg" alt="A waste-picker collecting plastic on the shore at Mahim" loading="lazy" style="inset:auto 0;top:-4%;height:172%;object-position:50% 0"></div>
+        <div class="proj-media"><img src="assets/shoreline-mahim.jpg" alt="A waste-picker collecting plastic on the shore at Mahim" loading="lazy" style="inset:auto 0;top:-4%;height:172%;object-position:50% 0"></div>
       </article>
     </div>
   </div>
@@ -440,7 +404,7 @@
       <article class="win" data-reveal style="--d:180ms"><small>Envision · IIT Roorkee · 2025</small><b>Best Innovation</b><p>Top 4 of 478 national teams.</p><span class="tag">Samudra Manthan</span></article>
       <article class="win" data-reveal style="--d:240ms"><small>TISS · 2025</small><b>Top 10 of 128</b><p>Two teams in the Social Business Idea Competition.</p></article>
       <article class="win ink" data-reveal style="--d:60ms"><small>Enactus India Nationals · 2025</small><b>Top 20 in India</b><p>Early Stage category.</p><span class="tag teal">Sanchay</span></article>
-      <article class="win gold" data-reveal style="--d:120ms"><small>Envision · IIT Roorkee · 2026</small><b>Top 4</b><p>Mature Stage, at E-Summit '26.</p><span class="tag rose">Inaayat</span></article>
+      <article class="win gold" data-reveal style="--d:120ms"><small>Envision · IIT Roorkee · 2026</small><b>Top 5</b><p>Mature Stage, at E-Summit '26.</p><span class="tag rose">Inaayat</span></article>
       <article class="win" data-reveal style="--d:180ms"><small>Red Dot Foundation · Safecity</small><b>2nd of 105</b><p>Youth Innovation Challenge, with UN-Habitat and UNICEF among the partners.</p><span class="tag rose">Inaayat</span></article>
       <article class="win" data-reveal style="--d:240ms"><small>Enactus India</small><b>Enactus Cares</b><p>Winner of the Enactus Cares competition.</p></article>
       <article class="win ink" data-reveal style="--d:300ms"><small>Navi Mumbai · 2026</small><b>Recognised by NMMC</b><p>For our work recovering sea waste.</p><span class="tag teal">Sanchay</span></article>
@@ -482,9 +446,9 @@
     <div>
       <span class="eyebrow">Join us</span>
       <h2 data-words>Ready to be the change?</h2>
-      <p class="lede" data-reveal>Whatever your stream, there's a team for you: operations, business development, finance, events. Come for the projects, stay for the people.</p>
+      <p class="lede" data-reveal>Whatever your stream, there's a team for you: operations, business development, finance, events, social media. Come for the projects, stay for the people.</p>
       <div class="ctas" data-reveal style="--d:150ms">
-        <a class="btn btn-y" href="https://ig.me/m/enactushrc" target="_blank" rel="noopener">Message @enactushrc</a>
+        <a class="btn btn-y" href="https://ig.me/m/enactushrc" target="_blank" rel="noopener">Text @enactushrc on Instagram</a>
         <a class="btn btn-o" href="https://www.linkedin.com/company/enactus-h-r-college/" target="_blank" rel="noopener">Connect on LinkedIn</a>
       </div>
     </div>
@@ -551,52 +515,7 @@
 <script src="assets/enactus.js?v=5"></script>
 <script>
 (() => {
-  const { $, $$, reduce, onScroll, whenVisible, fit, progress, clamp, inOut } = window.EN;
-
-  /* ── a globe of 1,600 chapters turns, and Mumbai pulses ── */
-  (() => {
-    const cv = $('#globe');
-    const ctx = cv.getContext('2d');
-    const N = 1600, golden = Math.PI * (3 - Math.sqrt(5));
-    const dots = Array.from({ length: N }, (_, i) => {
-      const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), th = golden * i;
-      return [Math.cos(th) * r, y, Math.sin(th) * r];
-    });
-    const lat = 19.07 * Math.PI / 180, lon = 72.88 * Math.PI / 180;
-    const home = [Math.cos(lat) * Math.cos(lon), Math.sin(lat), Math.cos(lat) * Math.sin(lon)];
-    let W = 0, H = 0, dpr = 1, live = false;
-    const size = () => { ({ W, H, dpr } = fit(cv)); };
-    const draw = now => {
-      const R = Math.min(W, H) * .4, cx = W / 2, cy = H * .45;
-      const ry = reduce ? -lon + Math.PI / 2 : now * .00018, rx = .35;
-      const cY = Math.cos(ry), sY = Math.sin(ry), cX = Math.cos(rx), sX = Math.sin(rx);
-      const proj = ([x, y, z]) => {
-        const x1 = x * cY + z * sY, z1 = -x * sY + z * cY, y1 = -(y * cX - z1 * sX), z2 = y * sX + z1 * cX;
-        return [cx + x1 * R, cy + y1 * R, z2];
-      };
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.clearRect(0, 0, W, H);
-      const back = new Path2D(), front = new Path2D();
-      for (const d of dots) {
-        const [x, y, z] = proj(d);
-        const P = z < 0 ? front : back, s = z < 0 ? 1.6 : 1;
-        P.moveTo(x + s, y); P.arc(x, y, s, 0, 6.283);
-      }
-      ctx.fillStyle = 'rgba(21,21,26,.14)'; ctx.fill(back);
-      ctx.fillStyle = 'rgba(21,21,26,.55)'; ctx.fill(front);
-      const [hx, hy, hz] = proj(home);
-      if (hz < .2) {
-        const t = (now % 2000) / 2000;
-        ctx.beginPath(); ctx.arc(hx, hy, 6 + t * 26, 0, 6.283);
-        ctx.strokeStyle = `rgba(224,162,0,${1 - t})`; ctx.lineWidth = 2; ctx.stroke();
-        ctx.beginPath(); ctx.arc(hx, hy, 6, 0, 6.283); ctx.fillStyle = '#ffc21a'; ctx.fill();
-        ctx.lineWidth = 1.5; ctx.strokeStyle = '#15151a'; ctx.stroke();
-      }
-      if (live && !reduce) requestAnimationFrame(draw);
-    };
-    addEventListener('resize', () => { size(); if (reduce) draw(0); });
-    whenVisible(cv, () => { if (!live) { size(); live = true; requestAnimationFrame(draw); } }, () => { live = false; });
-  })();
+  const { $, $$, reduce, onScroll, progress, clamp, inOut } = window.EN;
 
   /* ── presidents: the first card steps back and dims as the second rises over it ── */
   (() => {
