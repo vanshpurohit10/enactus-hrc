@@ -13,6 +13,15 @@ Each page adds its own palette and page-specific styles inline; the only inline 
   `data-reveal` (fade in once) and `.count` (count up once). No intros, pinned scroll scenes, marquees, cursor effects or parallax.
   Bump the `?v=` on the CSS/JS links when changing the shared files.
 
+## Preview artifact
+A private claude.ai preview of the site: https://claude.ai/artifact/Un4jg5jmUZ4bTcxYe5iSLG
+The user reviews changes there before they are merged; GitHub `main` stays the source of truth for the live site.
+To refresh it from the repo: copy the three pages, drop the `?v=N` from the asset links, remove the home page's
+`<!doctype html>`, `<html>`, `<head>` and `<body>` tags (the host adds its own) and set its `<title>` to
+`Enactus H.R. College`. Then publish that home page with `url` set to the link above, with `inaayat.html`, `sanchay.html`
+and every `assets/` file except `og-*` in `files`. YouTube, Instagram and LinkedIn embeds are blocked in the
+preview but work on the live site.
+
 ## Done (Oct–Nov 2026)
 - Teacher-in-Charge is Darshit Shah.
 - Videos: full film (9:46) and a 3-minute cut, with original synthesised music. They still show old facts
