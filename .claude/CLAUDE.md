@@ -39,7 +39,7 @@ preview but work on the live site.
   Sanchay's batch record shows its finished state, and its
   traceability grid's missing closing tag was fixed. The videos still show the old animated site.
 
-- Voice-note review (6 Nov 2026, from a president, likely Vaishnavi): home lost the World Cup "3rd" badge (outdated) and the
+- Voice-note review (6 Nov 2026, from Vaishnavi Chaturvedi, president): home lost the World Cup "3rd" badge (outdated) and the
   297 villages number (unverified; Chirag's card now leads with the World Cup result), the EN·ACT·US band and the
   "We believe in engaging students" statement; Wins run newest first; presidents moved to a new Team page with a
   "Meet the team" section near the end of home. Inaayat lost its Instagram reels (GHTW 3.0 photo stands in), its numbers
