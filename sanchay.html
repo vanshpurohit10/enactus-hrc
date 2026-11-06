@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/enactus.css?v=6">
+<link rel="stylesheet" href="assets/enactus.css?v=7">
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.EN)document.documentElement.classList.remove('js')},4000)</script>
 <style>
 /* Sanchay's palette: the coast at night, sand by day, Enactus yellow for action */
@@ -39,8 +39,6 @@
 }
 .dark { color: #eaf2f8; }
 .deva { font-family: var(--deva); font-stretch: 100%; letter-spacing: 0; font-weight: 400; }
-/* this page has more links than the others, so the menu button takes over a little earlier */
-@media (max-width: 1320px) { .links, .nav-in > .btn { display: none; } .menu-btn { display: block; } }
 
 /* what washes up: a list under the numbers */
 .washes { background: var(--sand); padding: 0 0 clamp(64px, 8vw, 104px); }
@@ -148,28 +146,33 @@
       <span><b>SANCHAY</b><small>Enactus H.R. College</small></span>
     </a>
     <ul class="links">
-      <li><a href="index.html">Enactus HRC</a></li>
-      <li><a href="#problem">Problem</a></li>
-      <li><a href="#how">How it works</a></li>
-      <li><a href="#trace">Traceability</a></li>
-      <li><a href="#model">Business</a></li>
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="inaayat.html">Inaayat ↗</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="inaayat.html">Inaayat</a></li>
+      <li><a href="sanchay.html" aria-current="page">Sanchay</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <a class="btn btn-y" href="#partner">Partner with us</a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="sheet"><span></span><span></span></button>
   </div>
 </header>
 <nav class="sheet" id="sheet" aria-label="Menu">
-  <a href="#problem">Problem</a>
-  <a href="#how">How it works</a>
-  <a href="#trace">Traceability</a>
-  <a href="#model">Business</a>
-  <a href="#journey">Journey</a>
-  <a href="#gallery">Gallery</a>
-  <a href="index.html">Enactus HRC home</a>
+  <a href="index.html">Home</a>
   <a href="inaayat.html">Project Inaayat</a>
+  <a href="sanchay.html" aria-current="page">Project Sanchay</a>
+  <a href="events.html">Events</a>
+  <a href="team.html">Meet the team</a>
+  <a href="contact.html">Contact us</a>
+  <small>On this page</small>
+  <a class="sub" href="#problem">The problem</a>
+  <a class="sub" href="#how">How it works</a>
+  <a class="sub" href="#trace">Traceability</a>
+  <a class="sub" href="#life">Second life</a>
+  <a class="sub" href="#model">Business model</a>
+  <a class="sub" href="#journey">Journey</a>
+  <a class="sub" href="#gallery">Gallery</a>
+  <a class="sub" href="#partner">Partner with us</a>
   <a class="btn btn-y" href="#partner">Partner with us</a>
 </nav>
 
@@ -293,14 +296,6 @@
         <div class="body"><span class="n">05 · For companies</span><h3>Credit</h3><p>Companies buy plastic credits for the plastic we recover. That money pays the crew and funds the next drive.</p></div>
       </article>
     </div>
-  </div>
-</section>
-
-<!-- EVERY SINGLE KILO -->
-<section class="band" id="every" aria-label="Every single kilo counts">
-  <div class="wrap">
-    <span class="eyebrow">Why we keep records</span>
-    <h2>Every single kilo counts.</h2>
   </div>
 </section>
 
@@ -517,7 +512,7 @@
       </div>
       <div>
         <h4>Explore</h4>
-        <ul><li><a href="index.html">Enactus HRC home</a></li><li><a href="inaayat.html">Project Inaayat</a></li><li><a href="#problem">The problem</a></li><li><a href="#how">How it works</a></li><li><a href="#trace">Traceability</a></li><li><a href="#model">Business model</a></li><li><a href="#journey">Journey</a></li><li><a href="#gallery">Gallery</a></li></ul>
+        <ul><li><a href="index.html">Enactus HRC home</a></li><li><a href="inaayat.html">Project Inaayat</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact us</a></li><li><a href="#problem">The problem</a></li><li><a href="#how">How it works</a></li><li><a href="#trace">Traceability</a></li><li><a href="#model">Business model</a></li><li><a href="#journey">Journey</a></li><li><a href="#gallery">Gallery</a></li></ul>
       </div>
       <div>
         <h4>Follow</h4>
@@ -545,7 +540,7 @@
     { src: 'assets/team-on-beach.jpg', cap: 'Enactus HRC on the beach', c: 6, r: 3 }
   ];
 </script>
-<script src="assets/enactus.js?v=6"></script>
+<script src="assets/enactus.js?v=7"></script>
 <script>
 (() => {
   const { $, inr } = window.EN;

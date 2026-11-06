@@ -18,20 +18,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/enactus.css?v=6">
+<link rel="stylesheet" href="assets/enactus.css?v=7">
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.EN)document.documentElement.classList.remove('js')},4000)</script>
 <style>
 /* the home page keeps Enactus's own black and yellow; each project brings its colour */
 :root { --acc2: #ff5a7e; }
-/* these two follow another dark section without top padding, so a link to them stops below the nav */
-#projects, #legacy { scroll-margin-top: 96px; }
-
-/* what the name means */
-.name-parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(10px, 2vw, 24px); max-width: 920px; margin: 30px auto 0; }
-.name-parts div { display: grid; gap: 10px; padding-top: 20px; border-top: 2px solid currentColor; }
-.name-parts b { font: 900 clamp(44px, 7vw, 88px)/.9 var(--display); font-stretch: 116%; letter-spacing: -.04em; }
-.name-parts span { font: 700 12px/1.3 var(--mono); letter-spacing: .16em; text-transform: uppercase; opacity: .8; }
-@media (max-width: 420px) { .name-parts span { font-size: 10px; letter-spacing: .1em; } }
+/* this follows another dark section without top padding, so a link to it stops below the nav */
+#legacy { scroll-margin-top: 96px; }
 
 /* how a chapter works */
 .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 56px; counter-reset: f; }
@@ -49,17 +42,12 @@
 @media (max-width: 960px) { .flow { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .flow, .guides { grid-template-columns: 1fr; } }
 
-/* presidents: one row each, the poster beside the words */
-.pres-list { display: grid; gap: 18px; margin-top: 56px; max-width: 1000px; }
-.pres-card { display: grid; grid-template-columns: 300px 1fr; border-radius: 24px; overflow: hidden; background: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
-.pres-card figure { margin: 0; aspect-ratio: 4 / 5; background: var(--sea); }
-.pres-card img { width: 100%; height: 100%; object-fit: cover; }
-.pres-body { padding: clamp(24px, 3.4vw, 44px); display: grid; gap: 12px; align-content: center; }
-.pres-n { font: 700 12px/1 var(--mono); letter-spacing: .2em; color: var(--acc); text-transform: uppercase; }
-.pres-body h3 { font-size: clamp(28px, 3.2vw, 44px); font-weight: 820; }
-.pres-role { font: 650 clamp(17px, 1.5vw, 20px)/1.3 var(--display); font-stretch: 108%; }
-.pres-body .lede { max-width: 48ch; font-size: clamp(16px, 1.3vw, 18px); }
-@media (max-width: 640px) { .pres-card { grid-template-columns: 1fr; } }
+/* meet the team: a short pointer to the Team page */
+.team-teaser { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.team-thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; max-width: 440px; justify-self: end; }
+.team-thumbs a { display: block; border-radius: 18px; overflow: hidden; box-shadow: 0 18px 40px -26px rgba(0, 0, 0, .45); }
+.team-thumbs img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+@media (max-width: 860px) { .team-teaser { grid-template-columns: 1fr; } .team-thumbs { justify-self: start; } }
 
 /* our projects: one large card each, in the project's colour */
 .proj { position: relative; border-radius: 28px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; min-height: min(72vh, 580px); background: var(--pc-bg); color: var(--pc-fg); }
@@ -138,29 +126,31 @@
       <span><b>H.R. COLLEGE</b><small>Mumbai · since 2009</small></span>
     </a>
     <ul class="links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#legacy">Our story</a></li>
-      <li><a href="#wins">Wins</a></li>
-      <li><a href="#life">Life at Enactus</a></li>
-      <li class="sep" aria-hidden="true"></li>
+      <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="inaayat.html">Inaayat</a></li>
       <li><a href="sanchay.html">Sanchay</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <a class="btn btn-y" href="#join">Join Enactus</a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="sheet"><span></span><span></span></button>
   </div>
 </header>
 <nav class="sheet" id="sheet" aria-label="Menu">
-  <a href="#about">About Enactus</a>
-  <a href="#projects">Our projects</a>
-  <a href="#presidents">Our presidents</a>
-  <a href="#legacy">Our story</a>
-  <a href="#wins">Wins</a>
-  <a href="#life">Life at Enactus</a>
-  <small>Projects</small>
+  <a href="index.html" aria-current="page">Home</a>
   <a href="inaayat.html">Project Inaayat</a>
   <a href="sanchay.html">Project Sanchay</a>
+  <a href="events.html">Events</a>
+  <a href="team.html">Meet the team</a>
+  <a href="contact.html">Contact us</a>
+  <small>On this page</small>
+  <a class="sub" href="#chapter">About us</a>
+  <a class="sub" href="#projects">Our projects</a>
+  <a class="sub" href="#legacy">Our story</a>
+  <a class="sub" href="#wins">Wins</a>
+  <a class="sub" href="#life">Life at Enactus</a>
+  <a class="sub" href="#team">Meet the team</a>
   <a class="btn btn-y" href="#join">Join Enactus</a>
 </nav>
 
@@ -169,11 +159,6 @@
 <!-- HERO -->
 <section class="hero" id="top" style="--hp:50% 35%">
   <div class="hero-bg"><img src="assets/ghtw-3-team.jpg" alt="The Enactus H.R. College team" referrerpolicy="no-referrer" fetchpriority="high"></div>
-  <a class="hero-badge" href="#wins" aria-label="3rd among 36 nations at the Enactus World Cup 2012">
-    <small>ENACTUS WORLD CUP · 2012</small>
-    <b>3rd</b>
-    <span>among 36 nations</span>
-  </a>
   <div class="hero-main wrap">
     <div class="hero-card">
       <span class="eyebrow">Enactus H.R. College · Mumbai</span>
@@ -188,7 +173,7 @@
   <div class="strip">
     <div class="strip-label">Recognised at</div>
     <div class="strip-list">
-      <span>Enactus World Cup 2012</span><span>National Award for Women Empowerment</span><span>E-Summit · IIT Roorkee</span><span>TISS Social Business Idea Competition</span><span>Red Dot Foundation</span><span>Featured in Mid-day</span><span>Recognised by NMMC</span>
+      <span>National Award for Women Empowerment</span><span>E-Summit · IIT Roorkee</span><span>TISS Social Business Idea Competition</span><span>Red Dot Foundation</span><span>Featured in Mid-day</span><span>Recognised by NMMC</span>
     </div>
   </div>
 </section>
@@ -200,33 +185,10 @@
       <h2>Seventeen years of entrepreneurial action.</h2>
       <p>Every project starts with a community and ends with a business that can run without us.</p>
     </div>
-    <div class="stat-grid">
+    <div class="stat-grid three">
       <div class="stat" data-reveal><div class="big"><span class="count" data-to="17">17</span><small>years</small></div><h4>Of projects</h4><p>Since Project Chirag in 2009.</p></div>
       <div class="stat" data-reveal style="--d:80ms"><div class="big"><span class="count" data-to="80000">80,000</span><small>+</small></div><h4>Lives impacted</h4><p>By Project Inaayat since 2018.</p></div>
       <div class="stat" data-reveal style="--d:160ms"><div class="big"><span class="count" data-to="7000">7,000</span><small>kg</small></div><h4>Ocean waste recovered</h4><p>By Project Sanchay from Mumbai's coast.</p></div>
-      <div class="stat" data-reveal style="--d:240ms"><div class="big"><span class="count" data-to="297">297</span></div><h4>Villages lit</h4><p>By the solar lamps of Project Chirag.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- EN + ACT + US -->
-<section class="band" id="meaning" aria-label="Entrepreneurial, Action, Us: Enactus">
-  <div class="wrap">
-    <span class="eyebrow">What the name means</span>
-    <div class="name-parts">
-      <div><b>EN</b><span>Entrepreneurial</span></div>
-      <div><b>ACT</b><span>Action</span></div>
-      <div><b>US</b><span>Us</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT WE BELIEVE -->
-<section class="sec" id="about">
-  <div class="wrap">
-    <div class="sec-head" style="max-width:1000px">
-      <span class="eyebrow">What we believe</span>
-      <p class="statement" data-reveal>We believe in engaging students who take entrepreneurial action for others, to create a better world for us all.</p>
     </div>
   </div>
 </section>
@@ -252,38 +214,8 @@
   </div>
 </section>
 
-<!-- PRESIDENTS -->
-<section class="sec dark" id="presidents" aria-label="Our presidents">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Meet the leadership</span>
-      <h2>Our presidents.</h2>
-    </div>
-    <div class="pres-list">
-      <article class="pres-card" data-reveal>
-        <figure><img src="assets/president-vaishnavi-chaturvedi.jpg" alt="Vaishnavi Chaturvedi, President, Enactus H.R. College" loading="lazy"></figure>
-        <div class="pres-body">
-          <span class="pres-n">President</span>
-          <h3>Vaishnavi Chaturvedi</h3>
-          <p class="pres-role">The President behind the vision</p>
-          <p class="lede">Keeping the vision clear while bringing together people, projects and possibilities, and turning what we want to achieve into a direction the whole team can move towards.</p>
-        </div>
-      </article>
-      <article class="pres-card" data-reveal>
-        <figure><img src="assets/president-bhavika-jhawar.jpg" alt="Bhavika Jhawar, President, Enactus H.R. College" loading="lazy"></figure>
-        <div class="pres-body">
-          <span class="pres-n">President</span>
-          <h3>Bhavika Jhawar</h3>
-          <p class="pres-role">The President behind the team</p>
-          <p class="lede">A team this big needs someone who sees the people behind the work. From ideas to challenges, keeping everyone connected, motivated and moving forward together.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
 <!-- OUR PROJECTS -->
-<section class="sec dark" id="projects" style="padding-top:0">
+<section class="sec dark" id="projects">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Our projects</span>
@@ -335,7 +267,7 @@
       <h2>Seventeen years, one idea at a time.</h2>
     </div>
     <div class="legacy-grid">
-      <article class="past" data-reveal><span class="yr">2009 – 2012 · OUR FIRST PROJECT</span><h3>Chirag</h3><p>"Light for All": differently-abled communities assembled, tested and maintained solar lamps for villages without grid power. It took us to the Enactus World Cup 2012, 3rd among 36 nations, and became the Chirag Rural Development Foundation.</p><div class="big">11,918<small>houses lit across 297 villages</small></div></article>
+      <article class="past" data-reveal><span class="yr">2009 – 2012 · OUR FIRST PROJECT</span><h3>Chirag</h3><p>"Light for All": differently-abled communities assembled, tested and maintained solar lamps for villages without grid power. It took us to the Enactus World Cup 2012, 3rd among 36 nations, and became the Chirag Rural Development Foundation.</p><div class="big">3rd<small>of 36 nations at the Enactus World Cup 2012</small></div></article>
       <article class="past" data-reveal style="--d:80ms"><span class="yr">2012 – 2015</span><h3>Aasha</h3><p>Trained women from underprivileged communities as skilled beauty professionals, so they could earn for their families.</p><div class="big">50+<small>women trained</small></div></article>
       <article class="past" data-reveal style="--d:160ms"><span class="yr">2015</span><h3>The Peach Vibe</h3><p>Aasha's next phase: workplace wellness sessions for companies, delivered by women from the community as massage therapists.</p><div class="big">2-in-1<small>less stress at work, more jobs for women</small></div></article>
       <article class="past" data-reveal><span class="yr">EARLIER</span><h3>Saarthi</h3><p>Literacy and English proficiency for underprivileged communities.</p><div class="big">ABC<small>language as a way up</small></div></article>
@@ -354,16 +286,16 @@
       <h2>Recognised, from Mumbai to the world.</h2>
     </div>
     <div class="wins">
-      <article class="win gold" data-reveal><small>Enactus World Cup · 2012</small><b>3rd of 36 nations</b><p>Project Chirag represented India on the world stage.</p></article>
-      <article class="win" data-reveal style="--d:60ms"><small>Bhavishya Bharat · 2022</small><b>National Award</b><p>Best Social Initiative for Women Empowerment, among 186 colleges.</p><span class="tag rose">Inaayat + Aajeevika</span></article>
-      <article class="win ink" data-reveal style="--d:120ms"><small>Enactus India Nationals · 2024</small><b>Top 20 of 60</b><p>Selected for the Mature Stage competition at Amity University, Delhi.</p></article>
-      <article class="win" data-reveal style="--d:180ms"><small>Envision · IIT Roorkee · 2025</small><b>Best Innovation</b><p>Top 4 of 478 national teams.</p><span class="tag">Samudra Manthan</span></article>
-      <article class="win" data-reveal style="--d:240ms"><small>TISS · 2025</small><b>Top 10 of 128</b><p>Two teams in the Social Business Idea Competition.</p></article>
-      <article class="win ink" data-reveal style="--d:60ms"><small>Enactus India Nationals · 2025</small><b>Top 20 in India</b><p>Early Stage category.</p><span class="tag teal">Sanchay</span></article>
-      <article class="win gold" data-reveal style="--d:120ms"><small>Envision · IIT Roorkee · 2026</small><b>Top 5</b><p>Mature Stage, at E-Summit '26.</p><span class="tag rose">Inaayat</span></article>
-      <article class="win" data-reveal style="--d:180ms"><small>Red Dot Foundation · Safecity</small><b>2nd of 105</b><p>Youth Innovation Challenge, with UN-Habitat and UNICEF among the partners.</p><span class="tag rose">Inaayat</span></article>
-      <article class="win" data-reveal style="--d:240ms"><small>Enactus India</small><b>Enactus Cares</b><p>Winner of the Enactus Cares competition.</p></article>
-      <article class="win ink" data-reveal style="--d:300ms"><small>Navi Mumbai · 2026</small><b>Recognised by NMMC</b><p>For our work recovering sea waste.</p><span class="tag teal">Sanchay</span></article>
+      <article class="win gold" data-reveal><small>Envision · IIT Roorkee · 2026</small><b>Top 5</b><p>Mature Stage, at E-Summit '26.</p><span class="tag rose">Inaayat</span></article>
+      <article class="win ink" data-reveal style="--d:60ms"><small>Navi Mumbai · 2026</small><b>Recognised by NMMC</b><p>For our work recovering sea waste.</p><span class="tag teal">Sanchay</span></article>
+      <article class="win ink" data-reveal style="--d:120ms"><small>Enactus India Nationals · 2025</small><b>Top 20 in India</b><p>Early Stage category.</p><span class="tag teal">Sanchay</span></article>
+      <article class="win" data-reveal style="--d:180ms"><small>TISS · 2025</small><b>Top 10 of 128</b><p>Two teams in the Social Business Idea Competition.</p></article>
+      <article class="win" data-reveal><small>Envision · IIT Roorkee · 2025</small><b>Best Innovation</b><p>Top 4 of 478 national teams.</p><span class="tag">Samudra Manthan</span></article>
+      <article class="win ink" data-reveal style="--d:60ms"><small>Enactus India Nationals · 2024</small><b>Top 20 of 60</b><p>Selected for the Mature Stage competition at Amity University, Delhi.</p></article>
+      <article class="win" data-reveal style="--d:120ms"><small>Bhavishya Bharat · 2022</small><b>National Award</b><p>Best Social Initiative for Women Empowerment, among 186 colleges.</p><span class="tag rose">Inaayat + Aajeevika</span></article>
+      <article class="win" data-reveal style="--d:180ms"><small>Red Dot Foundation · Safecity · 2020–21</small><b>2nd of 105</b><p>Youth Innovation Challenge, with UN-Habitat and UNICEF among the partners.</p><span class="tag rose">Inaayat</span></article>
+      <article class="win" data-reveal><small>Enactus India</small><b>Enactus Cares</b><p>Winner of the Enactus Cares competition.</p></article>
+      <article class="win gold" data-reveal style="--d:60ms"><small>Enactus World Cup · 2012</small><b>3rd of 36 nations</b><p>Project Chirag represented India on the world stage.</p></article>
     </div>
     <div class="press" data-reveal><b>In the news</b><span>"HR College students lead 'Project Inaayat' to promote menstrual hygiene across Maharashtra"</span><a href="https://www.mid-day.com/mumbai/mumbai-news/article/hr-college-students-lead-project-inaayat-to-promote-menstrual-hygiene-across-maharashtra-23600505" target="_blank" rel="noopener">Mid-day, Oct 2025 ↗</a></div>
   </div>
@@ -394,6 +326,22 @@
   <div class="lb-bar"><button id="lbPrev" aria-label="Previous photo">‹</button><p id="lbCap"></p><button id="lbNext" aria-label="Next photo">›</button><button id="lbClose" aria-label="Close">✕</button></div>
 </dialog>
 
+<!-- MEET THE TEAM -->
+<section class="sec sand" id="team">
+  <div class="wrap team-teaser">
+    <div class="sec-head">
+      <span class="eyebrow">Meet the team</span>
+      <h2>The people who run Enactus HRC.</h2>
+      <p class="lede">Our presidents, Vaishnavi Chaturvedi and Bhavika Jhawar, lead a team of students across operations, business development, finance, events and social media.</p>
+      <div><a class="btn btn-d" href="team.html">Meet the team <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a></div>
+    </div>
+    <div class="team-thumbs" data-reveal>
+      <a href="team.html" aria-label="Vaishnavi Chaturvedi, President"><img src="assets/president-vaishnavi-chaturvedi.jpg" alt="Vaishnavi Chaturvedi, President" loading="lazy"></a>
+      <a href="team.html" aria-label="Bhavika Jhawar, President"><img src="assets/president-bhavika-jhawar.jpg" alt="Bhavika Jhawar, President" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
 <!-- JOIN -->
 <section class="sec partner on-photo" id="join">
   <div class="partner-bg"><img src="assets/team-on-beach.jpg" alt="" loading="lazy" style="object-position:50% 70%"></div>
@@ -408,7 +356,7 @@
       </div>
     </div>
     <div class="join-card" data-reveal>
-      <a href="inaayat.html#partner"><div><small>Partner · Inaayat</small><b>Sponsor menstrual kits</b><span>About ₹170 a kit, for the next campaign.</span></div><i aria-hidden="true">→</i></a>
+      <a href="inaayat.html#partner"><div><small>Partner · Inaayat</small><b>Sponsor menstrual kits</b><span>For the next Give Her the Wings campaign.</span></div><i aria-hidden="true">→</i></a>
       <a href="sanchay.html#partner"><div><small>Partner · Sanchay</small><b>Buy plastic credits</b><span>₹50 a credit, for Mumbai's coast.</span></div><i aria-hidden="true">→</i></a>
       <a href="https://www.instagram.com/enactushrc/" target="_blank" rel="noopener"><div><small>Follow</small><b>@enactushrc</b><span>Everything we do, as it happens.</span></div><i aria-hidden="true">↗</i></a>
     </div>
@@ -434,7 +382,7 @@
       </div>
       <div>
         <h4>Explore</h4>
-        <ul><li><a href="#about">About Enactus</a></li><li><a href="#presidents">Our presidents</a></li><li><a href="#projects">Our projects</a></li><li><a href="inaayat.html">Project Inaayat</a></li><li><a href="sanchay.html">Project Sanchay</a></li><li><a href="#wins">Wins</a></li><li><a href="#join">Join us</a></li></ul>
+        <ul><li><a href="#chapter">About Enactus</a></li><li><a href="#projects">Our projects</a></li><li><a href="inaayat.html">Project Inaayat</a></li><li><a href="sanchay.html">Project Sanchay</a></li><li><a href="events.html">Events</a></li><li><a href="team.html">Meet the team</a></li><li><a href="contact.html">Contact us</a></li><li><a href="#join">Join us</a></li></ul>
       </div>
       <div>
         <h4>Follow</h4>
@@ -462,6 +410,6 @@
     { src: 'assets/cleanup-drive-partners.jpg', cap: 'A clean-up drive with partners', c: 7, r: 3 }
   ];
 </script>
-<script src="assets/enactus.js?v=6"></script>
+<script src="assets/enactus.js?v=7"></script>
 </body>
 </html>

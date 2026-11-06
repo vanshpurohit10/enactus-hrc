@@ -1,8 +1,10 @@
 # Enactus H.R. College website: notes for Claude
 
 Static site on GitHub Pages, served from `main`: https://vanshpurohit10.github.io/enactus-hrc/
-`index.html` (home), `inaayat.html`, `sanchay.html`, all three on the shared `assets/enactus.css` and `assets/enactus.js`.
-Each page adds its own palette and page-specific styles inline; the only inline scripts are the gallery list and the calculators.
+`index.html` (home), `inaayat.html`, `sanchay.html`, `events.html`, `team.html`, `contact.html`, all on the shared
+`assets/enactus.css` and `assets/enactus.js`. Every page has the same top nav (Home, Inaayat, Sanchay, Events, Team, Contact);
+the phone menu adds the page's own sections. Each page adds its own palette and styles inline; the only inline scripts are
+the gallery lists and Sanchay's credits calculator.
 `video/` is a Remotion project for the two promo videos (see `video/README.md`).
 
 ## Working here
@@ -16,9 +18,9 @@ Each page adds its own palette and page-specific styles inline; the only inline 
 ## Preview artifact
 A private claude.ai preview of the site: https://claude.ai/artifact/Un4jg5jmUZ4bTcxYe5iSLG
 The user reviews changes there before they are merged; GitHub `main` stays the source of truth for the live site.
-To refresh it from the repo: copy the three pages, drop the `?v=N` from the asset links, remove the home page's
+To refresh it from the repo: copy the six pages, drop the `?v=N` from the asset links, remove the home page's
 `<!doctype html>`, `<html>`, `<head>` and `<body>` tags (the host adds its own) and set its `<title>` to
-`Enactus H.R. College`. Then publish that home page with `url` set to the link above, with `inaayat.html`, `sanchay.html`
+`Enactus H.R. College`. Then publish that home page with `url` set to the link above, with the other five pages
 and every `assets/` file except `og-*` in `files`. YouTube, Instagram and LinkedIn embeds are blocked in the
 preview but work on the live site.
 
@@ -34,22 +36,31 @@ preview but work on the live site.
   "Our approach", the QR block and "Next 12 months" removed; message buttons say "on Instagram".
 - Calmer design (5 Nov 2026): intro, cursor line, scene labels, marquees, glitch/kinetic type, pinned scenes, stacking cards,
   horizontal scroll, parallax and canvases removed; those sections are now plain grids and bands with the same copy.
-  Presidents are a two-row list with their full posters. Sanchay's batch record shows its finished state, and its
+  Sanchay's batch record shows its finished state, and its
   traceability grid's missing closing tag was fixed. The videos still show the old animated site.
 
+- Voice-note review (6 Nov 2026, from a president, likely Vaishnavi): home lost the World Cup "3rd" badge (outdated) and the
+  297 villages number (unverified; Chirag's card now leads with the World Cup result), the EN·ACT·US band and the
+  "We believe in engaging students" statement; Wins run newest first; presidents moved to a new Team page with a
+  "Meet the team" section near the end of home. Inaayat lost its Instagram reels (GHTW 3.0 photo stands in), its numbers
+  section, "Let's talk period", the kit section (wrong contents) and all costing (₹170 box, cost calculator, home join card).
+  Give Her the Wings moved to a new Events page with Synapse. New Contact page has only the two presidents. Sanchay lost
+  the "Every single kilo counts" band.
+
 ## Waiting on the team
-1. Villages lit (297) is unverified: the Chirag NGO now claims 500+ to 863 villages and says Chirag began in 2010 (site says 2009).
-2. Meet our team: names, roles and photos of all TYs (to extend the two-president section).
-3. Inaayat hero description: the "little change" they want.
-4. Inaayat numbers: correct values for 2,600 kits (Bindu), 1,000 kits per campaign, 1,200 pads (Nagpur).
-5. Correct kit contents.
-6. Their own GHTW 2026 videos to replace the last two Instagram reels in Inaayat's "Latest" section (the first reel may be removed).
-7. Photos for the Sanchay "Recycle" step (raincoats for NMMC, helmets for Rajasthan Police).
-8. IFAT India 2025: what is wrong (hero strip and journey entry).
-9. "Visual consistency": anything beyond the gallery and the cost box.
-10. Sanchay gallery: remove its Instagram and LinkedIn embeds too?
-11. Envision 2025 Samudra Manthan "Top 4 of 478": still correct?
-If "nationals achievement at top" meant the World Cup 2012 badge rather than the Nationals strip, move that instead.
+1. Home hero: the new description of Enactus (promised for 7 Nov 2026).
+2. Contact page: phone and email for Vaishnavi Chaturvedi and Bhavika Jhawar (cards say "To be added").
+3. Inaayat: the numbers they want to highlight (the numbers section is removed until then). Home's Inaayat card still
+   shows 80,000+ lives and 1,000 kits; ask whether those stay.
+4. Inaayat: the correct kit contents (the kit section is removed until then; the old one is in git history).
+5. Inaayat "Latest": photos from Give Her the Wings 2026 to replace the GHTW 3.0 stand-in.
+6. Team page: names, roles and photos of all TYs.
+7. Events page: Synapse date, photos and registration link.
+8. Inaayat hero description: the "little change" they want.
+9. Photos for the Sanchay "Recycle" step (raincoats for NMMC, helmets for Rajasthan Police).
+10. IFAT India 2025: what is wrong (hero strip and journey entry).
+11. Sanchay gallery: remove its Instagram and LinkedIn embeds too?
+12. Envision 2025 Samudra Manthan "Top 4 of 478": still correct? Year of the Enactus Cares win (for the Wins order)?
 
 ## Ideas discussed, not started
 - Custom domain enactushrc.com (unregistered on 4 Nov 2026): A records 185.199.108.153 to .111.153, `www` CNAME to
