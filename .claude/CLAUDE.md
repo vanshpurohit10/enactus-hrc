@@ -47,20 +47,23 @@ preview but work on the live site.
   Give Her the Wings moved to a new Events page with Synapse. New Contact page has only the two presidents. Sanchay lost
   the "Every single kilo counts" band.
 
+- Second round from Vaishnavi (6 Nov 2026): the team's Enactus description (first sentence in the hero, the rest in a new
+  "About us" section with its closing line as the statement); the presidents' phone numbers and emails on Contact; Inaayat's
+  three numbers (80,000+ beneficiaries, 4,800 kg plastic waste saved, 20,000+ kits; also on the home page); the kit is back
+  with its real contents (drawstring bag, 2 L-size 28 cm + 1 XL-size 33 cm cotton pads, Marathi manual, soap; no prices);
+  Synapse uses the team's own text, with no dates, no registration link and no "one-day"; Sanchay's LinkedIn and Instagram
+  posts were removed.
+
 ## Waiting on the team
-1. Home hero: the new description of Enactus (promised for 7 Nov 2026).
-2. Contact page: phone and email for Vaishnavi Chaturvedi and Bhavika Jhawar (cards say "To be added").
-3. Inaayat: the numbers they want to highlight (the numbers section is removed until then). Home's Inaayat card still
-   shows 80,000+ lives and 1,000 kits; ask whether those stay.
-4. Inaayat: the correct kit contents (the kit section is removed until then; the old one is in git history).
-5. Inaayat "Latest": photos from Give Her the Wings 2026 to replace the GHTW 3.0 stand-in.
-6. Team page: names, roles and photos of all TYs.
-7. Events page: Synapse date, photos and registration link.
-8. Inaayat hero description: the "little change" they want.
-9. Photos for the Sanchay "Recycle" step (raincoats for NMMC, helmets for Rajasthan Police).
-10. IFAT India 2025: what is wrong (hero strip and journey entry).
-11. Sanchay gallery: remove its Instagram and LinkedIn embeds too?
-12. Envision 2025 Samudra Manthan "Top 4 of 478": still correct? Year of the Enactus Cares win (for the Wins order)?
+1. Kit pads: the middle (absorbent) layer's fabric. The voice note sounds like "cotton punch"; the site says "an absorbent
+   cotton layer" until confirmed. Also confirm Vaishnavi's email is vaishnavichaturved@gmail.com (no final "i").
+2. Inaayat "Latest": photos from Give Her the Wings 2026 to replace the GHTW 3.0 stand-in.
+3. Team page: names, roles and photos of all TYs.
+4. Synapse photos (no dates or registration link, by the team's choice).
+5. Inaayat hero description: the "little change" they want.
+6. Photos for the Sanchay "Recycle" step (raincoats for NMMC, helmets for Rajasthan Police).
+7. IFAT India 2025: what is wrong (hero strip and journey entry).
+8. Envision 2025 Samudra Manthan "Top 4 of 478": still correct? Year of the Enactus Cares win (for the Wins order)?
 
 ## Ideas discussed, not started
 - Custom domain enactushrc.com (unregistered on 4 Nov 2026): A records 185.199.108.153 to .111.153, `www` CNAME to

@@ -125,14 +125,8 @@
 @media (max-width: 900px) { .model-grid { grid-template-columns: 1fr; } }
 @media (max-width: 460px) { .rev-row { grid-template-columns: auto 1fr; } .rev-row .amt { grid-column: 2; } }
 
-/* posts about Sanchay on LinkedIn and Instagram */
-.social { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 48px; }
-.social-card { border-radius: 20px; overflow: hidden; background: #fff; display: grid; grid-template-rows: auto 1fr; }
-.social-card header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; background: var(--ink); color: #fff; font: 700 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
-.social-card header a { color: var(--acc); text-decoration: none; }
-.social-card iframe { width: 100%; height: 620px; border: 0; display: block; background: #fff; }
+/* follow links under the gallery */
 .follow { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-@media (max-width: 860px) { .social { grid-template-columns: 1fr; } .social-card iframe { height: 560px; } }
 </style>
 </head>
 <body>
@@ -433,16 +427,6 @@
       <p class="lede">Shifts on the shore, the bags, the people. Tap any photo to see it bigger.</p>
     </div>
     <div class="gal" id="gal"></div>
-    <div class="social">
-      <div class="social-card" data-reveal>
-        <header>On LinkedIn <a href="https://www.linkedin.com/posts/enactus-h-r-college_introducing-project-sanchay-why-project-activity-7355454468261302272-n9FT" target="_blank" rel="noopener">Open ↗</a></header>
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7355454468261302272" title="Introducing Project Sanchay, on LinkedIn" loading="lazy"></iframe>
-      </div>
-      <div class="social-card" data-reveal style="--d:120ms">
-        <header>On Instagram <a href="https://www.instagram.com/p/DWHJEUkE4Pt/" target="_blank" rel="noopener">Open ↗</a></header>
-        <iframe src="https://www.instagram.com/p/DWHJEUkE4Pt/embed" title="Recognised by NMMC for Project Sanchay, on Instagram" loading="lazy"></iframe>
-      </div>
-    </div>
     <div class="follow" data-reveal>
       <a class="btn btn-y" href="https://www.instagram.com/enactushrc/" target="_blank" rel="noopener">Follow @enactushrc</a>
       <a class="btn btn-o" href="https://www.youtube.com/@enactushrcollege4328" target="_blank" rel="noopener">Watch on YouTube</a>
