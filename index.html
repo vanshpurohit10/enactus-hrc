@@ -26,6 +26,10 @@
 /* this follows another dark section without top padding, so a link to it stops below the nav */
 #legacy { scroll-margin-top: 96px; }
 
+/* about us */
+.sec-head.about { max-width: 920px; gap: 26px; }
+.sec-head.about .lede { max-width: 66ch; }
+
 /* how a chapter works */
 .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 56px; counter-reset: f; }
 .flow article { position: relative; border-radius: 22px; padding: 26px; background: #fff; display: grid; gap: 12px; align-content: start; box-shadow: 0 1px 0 rgba(0, 0, 0, .06), 0 18px 40px -26px rgba(0, 0, 0, .3); }
@@ -145,7 +149,8 @@
   <a href="team.html">Meet the team</a>
   <a href="contact.html">Contact us</a>
   <small>On this page</small>
-  <a class="sub" href="#chapter">About us</a>
+  <a class="sub" href="#about">About us</a>
+  <a class="sub" href="#chapter">How we work</a>
   <a class="sub" href="#projects">Our projects</a>
   <a class="sub" href="#legacy">Our story</a>
   <a class="sub" href="#wins">Wins</a>
@@ -163,7 +168,7 @@
     <div class="hero-card">
       <span class="eyebrow">Enactus H.R. College · Mumbai</span>
       <h1>At Enactus, <em>you</em> be the change.</h1>
-      <p>Enactus is a global network of students, academics and business leaders who use business to create social and environmental impact. At H.R. College of Commerce &amp; Economics, we've built sustainable businesses with communities since 2009, so the change keeps going after we leave.</p>
+      <p>Enactus H.R. College is a student-led chapter of the global Enactus network, driven by the belief that entrepreneurial action can create meaningful social change.</p>
       <div class="hero-ctas">
         <a class="btn btn-y" href="#projects">See our projects <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></a>
         <a class="btn btn-o" href="#join">Join Enactus</a>
@@ -187,8 +192,19 @@
     </div>
     <div class="stat-grid three">
       <div class="stat" data-reveal><div class="big"><span class="count" data-to="17">17</span><small>years</small></div><h4>Of projects</h4><p>Since Project Chirag in 2009.</p></div>
-      <div class="stat" data-reveal style="--d:80ms"><div class="big"><span class="count" data-to="80000">80,000</span><small>+</small></div><h4>Lives impacted</h4><p>By Project Inaayat since 2018.</p></div>
+      <div class="stat" data-reveal style="--d:80ms"><div class="big"><span class="count" data-to="80000">80,000</span><small>+</small></div><h4>Beneficiaries reached</h4><p>By Project Inaayat, across 200+ sessions.</p></div>
       <div class="stat" data-reveal style="--d:160ms"><div class="big"><span class="count" data-to="7000">7,000</span><small>kg</small></div><h4>Ocean waste recovered</h4><p>By Project Sanchay from Mumbai's coast.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head about">
+      <span class="eyebrow">About us</span>
+      <p class="lede" data-reveal>Through innovation, business thinking and community-led initiatives, we work towards addressing pressing social and environmental challenges while creating sustainable solutions that empower communities. Our approach combines entrepreneurial strategy with a strong understanding of real-world needs, enabling us to build solutions that are impactful, scalable and economically sustainable. As we continue to grow, we strive to be a platform for young changemakers to translate ideas into action and create lasting impact.</p>
+      <p class="statement" data-reveal>Because we believe in building a better world, not just for today, but for generations to come.</p>
     </div>
   </div>
 </section>
@@ -232,8 +248,8 @@
             <a class="go" href="inaayat.html">Explore Inaayat <span aria-hidden="true">→</span></a>
           </div>
           <div class="proj-stats">
-            <div><b>80,000+</b><span>lives impacted</span></div>
-            <div><b>1,000</b><span>kits each Give Her the Wings</span></div>
+            <div><b>80,000+</b><span>beneficiaries reached</span></div>
+            <div><b>20,000+</b><span>kits distributed</span></div>
             <div><b>Top 5</b><span>Envision 2026, IIT Roorkee</span></div>
           </div>
         </div>
@@ -307,7 +323,7 @@
     <div class="sec-head">
       <span class="eyebrow">Life at Enactus</span>
       <h2>The people behind the projects.</h2>
-      <p class="lede">Clean-ups at sunrise, village sessions, stalls at every fest, and Synapse, our first one-day intercollegiate conclave with panels, SDG stalls and a case study competition. Tap a photo to see it bigger.</p>
+      <p class="lede">Clean-ups at sunrise, village sessions, stalls at every fest, and Synapse, our flagship entrepreneurship conclave, with panel discussions and a competition built around real-world social challenges. Tap a photo to see it bigger.</p>
       <div class="life-tags">
         <small>A year at Enactus HRC</small>
         <div class="tags"><span>Village campaigns</span><span>Beach clean-ups</span><span>MHM sessions</span><span>Synapse</span><span>Nationals</span><span>Stalls</span><span>Case competitions</span><span>Webinars</span><span>Icebreakers</span><span>Pitches</span></div>
@@ -382,7 +398,7 @@
       </div>
       <div>
         <h4>Explore</h4>
-        <ul><li><a href="#chapter">About Enactus</a></li><li><a href="#projects">Our projects</a></li><li><a href="inaayat.html">Project Inaayat</a></li><li><a href="sanchay.html">Project Sanchay</a></li><li><a href="events.html">Events</a></li><li><a href="team.html">Meet the team</a></li><li><a href="contact.html">Contact us</a></li><li><a href="#join">Join us</a></li></ul>
+        <ul><li><a href="#about">About Enactus</a></li><li><a href="#projects">Our projects</a></li><li><a href="inaayat.html">Project Inaayat</a></li><li><a href="sanchay.html">Project Sanchay</a></li><li><a href="events.html">Events</a></li><li><a href="team.html">Meet the team</a></li><li><a href="contact.html">Contact us</a></li><li><a href="#join">Join us</a></li></ul>
       </div>
       <div>
         <h4>Follow</h4>

@@ -39,8 +39,11 @@
 .wing .btn { min-height: 40px; }
 @media (max-width: 760px) { .wing { grid-template-columns: 1fr; } .wing .yr { order: -1; font-size: 64px; } }
 .ev-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-.synapse-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: end; }
-.synapse-grid .tags { justify-content: flex-start; }
+.synapse-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+.syn-parts { display: grid; gap: 14px; }
+.syn-parts article { background: #fff; border-radius: 20px; padding: 22px 24px; display: grid; gap: 8px; box-shadow: 0 1px 0 rgba(0, 0, 0, .06), 0 18px 40px -26px rgba(0, 0, 0, .3); }
+.syn-parts h3 { font-size: 21px; }
+.syn-parts p { color: var(--mute); font-size: 16px; }
 @media (max-width: 860px) { .synapse-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -84,7 +87,7 @@
   <div class="wrap">
     <span class="eyebrow">Events</span>
     <h1>Our events.</h1>
-    <p class="lede">Give Her the Wings takes Project Inaayat to the villages every year, and Synapse brings students from other colleges to H.R. College.</p>
+    <p class="lede">Give Her the Wings takes Project Inaayat to the villages every year, and Synapse, our flagship entrepreneurship conclave, brings together aspiring entrepreneurs, industry professionals and young changemakers.</p>
   </div>
 </section>
 
@@ -136,12 +139,16 @@
 <section class="sec sand" id="synapse">
   <div class="wrap synapse-grid">
     <div class="sec-head">
-      <span class="eyebrow">Our intercollegiate conclave</span>
+      <span class="eyebrow">Our flagship entrepreneurship conclave</span>
       <h2>Synapse.</h2>
-      <p class="lede">Our first one-day intercollegiate conclave, with panel discussions, SDG stalls and a case study competition.</p>
+      <p class="lede">SYNAPSE is the flagship entrepreneurship conclave organised by Enactus H.R. College of Commerce and Economics, bringing together aspiring entrepreneurs, industry professionals, innovators and young changemakers on a common platform.</p>
       <div><a class="btn btn-d" href="https://www.instagram.com/enactushrc/" target="_blank" rel="noopener">Follow @enactushrc for event updates</a></div>
     </div>
-    <div class="tags" data-reveal><span>Panel discussions</span><span>SDG stalls</span><span>Case study competition</span><span>One day</span><span>Intercollegiate</span></div>
+    <div class="syn-parts">
+      <article data-reveal><h3>Panel discussions</h3><p>The conclave creates an engaging space for thought-provoking panel discussions, where accomplished speakers share their insights, experiences and perspectives on entrepreneurship, sustainability and the evolving business landscape.</p></article>
+      <article data-reveal style="--d:80ms"><h3>The flagship competition</h3><p>At its heart lies SYNAPSE's flagship competition, which challenges participants to think creatively, approach real-world social challenges with an entrepreneurial mindset and present innovative ideas with conviction.</p></article>
+      <article data-reveal style="--d:160ms"><h3>Why it matters</h3><p>Through meaningful conversations, intellectual exchange and a spirit of healthy competition, SYNAPSE aims to inspire fresh perspectives, foster collaboration and empower the next generation of leaders to turn ideas into meaningful impact.</p></article>
+    </div>
   </div>
 </section>
 </main>

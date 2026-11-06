@@ -52,6 +52,27 @@
 .latest-photo figcaption { position: absolute; left: 14px; bottom: 14px; font: 700 11px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #fff; background: rgba(27, 11, 22, .72); padding: 8px 12px; border-radius: 99px; }
 @media (max-width: 960px) { .latest-grid { grid-template-columns: 1fr; } .latest .also { grid-template-columns: 1fr; } }
 
+/* the kit: the drawstring bag with what's inside laid out around it */
+.kit { background: var(--sand); }
+.kit-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 24px; }
+.kit-copy { display: grid; gap: 20px; }
+.kit-copy h2 { font-size: clamp(34px, 4.2vw, 56px); }
+.kit-note { font-size: 15px; color: var(--mute); border-left: 3px solid var(--acc); padding-left: 14px; }
+.kit-stage { position: relative; height: 540px; }
+.kit-item { position: absolute; left: 50%; top: 50%; display: grid; justify-items: center; gap: 10px; transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) rotate(var(--r, 0deg)); }
+.kit-item svg { height: auto; filter: drop-shadow(0 14px 18px rgba(42, 18, 34, .18)); }
+.kit-item span { font: 700 11px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text); background: #fff; padding: 6px 9px; border-radius: 8px; white-space: nowrap; box-shadow: 0 6px 14px rgba(42, 18, 34, .1); }
+.kit-pouch { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.kit-pouch svg { width: 200px; height: auto; filter: drop-shadow(0 18px 24px rgba(42, 18, 34, .18)); }
+@media (max-width: 1000px) {
+  .kit-grid { grid-template-columns: 1fr; }
+  .kit-stage { height: auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 14px; padding-top: 10px; }
+  .kit-item, .kit-pouch { position: static; transform: none; }
+  .kit-item svg { width: 88px !important; }
+  .kit-item span { white-space: normal; text-align: center; }
+  .kit-pouch { display: none; }
+}
+
 /* business model */
 .streams { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 56px; }
 .stream { border-radius: 26px; padding: clamp(24px, 2.6vw, 34px); background: var(--ink); color: #fff; display: grid; gap: 14px; align-content: start; min-height: 260px; }
@@ -99,7 +120,9 @@
   <small>On this page</small>
   <a class="sub" href="#problem">The problem</a>
   <a class="sub" href="#latest">2026 campaign</a>
+  <a class="sub" href="#impact">Our numbers</a>
   <a class="sub" href="#how">How it works</a>
+  <a class="sub" href="#kit">The kit</a>
   <a class="sub" href="#model">Business model</a>
   <a class="sub" href="#journey">Journey</a>
   <a class="sub" href="#gallery">Gallery</a>
@@ -178,6 +201,21 @@
   </div>
 </section>
 
+<!-- STATS -->
+<section class="stats" id="impact">
+  <div class="wrap">
+    <div class="stats-head">
+      <h2>Eight years of breaking the silence.</h2>
+      <p>From one project in 2018 to sessions across Mumbai, Palghar and beyond.</p>
+    </div>
+    <div class="stat-grid three">
+      <div class="stat" data-reveal><div class="big"><span class="count" data-to="80000">80,000</span><small>+</small></div><h4>Beneficiaries reached</h4><p>Till date, across 200+ sessions.</p></div>
+      <div class="stat" data-reveal style="--d:80ms"><div class="big"><span class="count" data-to="4800">4,800</span><small>kg</small></div><h4>Plastic waste saved</h4><p>1.5 kg per kit, over about three years.</p></div>
+      <div class="stat" data-reveal style="--d:160ms"><div class="big"><span class="count" data-to="20000">20,000</span><small>+</small></div><h4>Kits distributed</h4><p>With awareness sessions, through NGOs and schools.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="sec inky" id="how">
   <div class="wrap">
@@ -206,6 +244,25 @@
         <div class="media art"><svg viewBox="0 0 140 110" fill="none" stroke="#ffc21a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="70" cy="55" r="34"/><path d="M70 21v68M52 40h28a10 10 0 0 1 0 20H58" stroke="#ff5a7e"/><path d="M60 60l18 18"/></svg></div>
         <div class="body"><span class="n">05 · FUND</span><h3>Orders pay for reach</h3><p>Paying orders fund production, while partnerships carry the kits to communities where access is hardest.</p></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- THE KIT -->
+<section class="sec kit" id="kit">
+  <div class="wrap kit-grid">
+    <div class="kit-copy">
+      <span class="eyebrow">What's in the kit</span>
+      <h2>Everything she needs, in one bag.</h2>
+      <p class="lede" data-reveal>Every Inaayat kit is a drawstring bag with three soft cotton reusable pads, two L-size and one XL-size, an instruction manual in the local language, Marathi, and a soap.</p>
+      <p class="kit-note" data-reveal>Each pad has a cotton fleece top layer, an absorbent cotton layer and a waterproof PUL layer underneath. L-size pads are 28 cm and XL-size 33 cm, and a kit lasts more than two years when it is looked after.</p>
+    </div>
+    <div class="kit-stage" aria-hidden="true">
+      <div class="kit-pouch"><svg viewBox="0 0 190 190"><path d="M44 58c-14 36-16 80-2 104 10 16 96 16 106 0 14-24 12-68-2-104z" fill="#e9dcc3"/><path d="M44 58c30 10 72 10 102 0" fill="none" stroke="#c9b48e" stroke-width="5" stroke-linecap="round"/><path d="M58 62c-4-18 8-30 16-30M132 62c4-18-8-30-16-30" fill="none" stroke="#c9b48e" stroke-width="4" stroke-linecap="round"/><path d="M95 64c-8 12-24 22-30 38M95 64c8 12 24 22 30 38" fill="none" stroke="#c9b48e" stroke-width="3" stroke-linecap="round"/><path d="M95 118c-9-9-22-4-22 7 0 12 22 24 22 24s22-12 22-24c0-11-13-16-22-7z" fill="#ff5a7e"/></svg></div>
+      <div class="kit-item" style="--tx:-180px;--ty:-150px;--r:-10deg"><svg viewBox="0 0 140 90" style="width:110px"><path d="M56 18Q70 2 84 18M56 72Q70 88 84 72" fill="#b98fe0"/><path d="M14 45C14 26 40 18 70 18s56 8 56 27-26 27-56 27S14 64 14 45z" fill="#b98fe0"/><path d="M24 45C24 32 46 27 70 27s46 5 46 18-22 18-46 18-46-5-46-18z" fill="none" stroke="#8a5cc2" stroke-width="2" stroke-dasharray="4 4"/><circle cx="70" cy="9" r="3.5" fill="#fff"/><circle cx="70" cy="81" r="3.5" fill="#fff"/></svg><span>L-size pad ×2 · 28&nbsp;cm</span></div>
+      <div class="kit-item" style="--tx:185px;--ty:-145px;--r:9deg"><svg viewBox="0 0 140 90" style="width:130px"><path d="M56 18Q70 2 84 18M56 72Q70 88 84 72" fill="#b98fe0"/><path d="M14 45C14 26 40 18 70 18s56 8 56 27-26 27-56 27S14 64 14 45z" fill="#b98fe0"/><path d="M24 45C24 32 46 27 70 27s46 5 46 18-22 18-46 18-46-5-46-18z" fill="none" stroke="#8a5cc2" stroke-width="2" stroke-dasharray="4 4"/><circle cx="70" cy="9" r="3.5" fill="#fff"/><circle cx="70" cy="81" r="3.5" fill="#fff"/></svg><span>XL-size pad ×1 · 33&nbsp;cm</span></div>
+      <div class="kit-item" style="--tx:-195px;--ty:120px;--r:-7deg"><svg viewBox="0 0 110 110" style="width:100px"><rect x="10" y="8" width="90" height="94" rx="10" fill="#fff" stroke="#2a1222" stroke-width="3"/><circle cx="38" cy="38" r="10" fill="#ff5a7e"/><path d="M28 74c0-10 4-18 10-18s10 8 10 18" fill="#ff5a7e"/><path d="M60 34h28M60 48h22M60 62h28M60 76h18" stroke="#2a1222" stroke-width="3" stroke-linecap="round"/></svg><span>Manual in Marathi</span></div>
+      <div class="kit-item" style="--tx:190px;--ty:125px;--r:8deg"><svg viewBox="0 0 120 80" style="width:96px"><rect x="10" y="22" width="100" height="46" rx="20" fill="#41c9c1"/><circle cx="34" cy="16" r="7" fill="none" stroke="#41c9c1" stroke-width="3"/><circle cx="52" cy="8" r="5" fill="none" stroke="#41c9c1" stroke-width="3"/><path d="M40 45h40" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg><span>Soap</span></div>
     </div>
   </div>
 </section>
