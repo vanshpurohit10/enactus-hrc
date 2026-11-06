@@ -2,7 +2,7 @@
 
 The website of Enactus H.R. College, the Enactus chapter of H.R. College of Commerce & Economics, Mumbai, and its projects, Project Inaayat and Project Sanchay.
 
-Live: https://vanshpurohit10.github.io/enactus-hrc/
+Live: https://enactushrc.com/
 
 - `index.html`: the chapter home page
 - `inaayat.html`: Project Inaayat
