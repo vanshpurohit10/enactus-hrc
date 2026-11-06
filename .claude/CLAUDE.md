@@ -56,7 +56,7 @@ preview but work on the live site.
 
 ## Waiting on the team
 1. Kit pads: the middle (absorbent) layer's fabric. The voice note sounds like "cotton punch"; the site says "an absorbent
-   cotton layer" until confirmed. Also confirm Vaishnavi's email is vaishnavichaturved@gmail.com (no final "i").
+   cotton layer" until confirmed.
 2. Inaayat "Latest": photos from Give Her the Wings 2026 to replace the GHTW 3.0 stand-in.
 3. Team page: names, roles and photos of all TYs.
 4. Synapse photos (no dates or registration link, by the team's choice).
