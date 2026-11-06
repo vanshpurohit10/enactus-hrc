@@ -1,6 +1,6 @@
 # Enactus H.R. College website: notes for Claude
 
-Static site on GitHub Pages, served from `main`: https://vanshpurohit10.github.io/enactus-hrc/
+Static site on GitHub Pages, served from `main`: https://enactushrc.com/ (GoDaddy DNS: four A records to GitHub, CNAME file in the repo)
 `index.html` (home), `inaayat.html`, `sanchay.html`, `events.html`, `team.html`, `contact.html`, all on the shared
 `assets/enactus.css` and `assets/enactus.js`. Every page has the same top nav (Home, Inaayat, Sanchay, Events, Team, Contact);
 the phone menu adds the page's own sections. Each page adds its own palette and styles inline; the only inline scripts are
